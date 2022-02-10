@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-import { StyleSheet, Text, View, TouchableOpacity ,StatusBar, Button} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity ,StatusBar, Button,ScrollView} from 'react-native';
+import Category from '../component/home/Category'
+import Featured from '../component/home/Featured'
+import BestSale from '../component/home/BestSale'
+
+
+
+
 
 export default function Home({navigation}) {
   const handleNavigation=()=>{
@@ -8,10 +15,14 @@ export default function Home({navigation}) {
   }
   return (
     <View style={styles.container}>
-      <Button onPress={handleNavigation} title="Checkout" />
-      {/* <StatusBar style="auto" /> */}
-      <Text>Home page</Text>
+            <ScrollView style={{ margin: 20 }}>
 
+      {/* <StatusBar style="auto" /> */}
+      <Category/>
+      <Featured/>
+      <BestSale/>
+      <Button onPress={handleNavigation} title="Checkout" />
+</ScrollView>
     </View>
   );
 }
