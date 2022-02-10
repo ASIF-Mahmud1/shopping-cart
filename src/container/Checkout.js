@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity ,ScrollView} from 'react-nativ
 import CartList from '../component/checkout/CartList'
 import UserDetails from '../component/checkout/UserDetails'
 import Bill from '../component/checkout/Bill'
-import {getData} from '../helper/helper'
+import {getData,storeData} from '../helper/helper'
 
 
 export default function Checkout({navigation}) {
@@ -25,10 +25,17 @@ export default function Checkout({navigation}) {
     })
   },[])
 
+  const handleRemoveFromCart=(id)=>{
+     const result= items.filter((ele)=>ele.id !== id)
+     storeData("cartList", result)
+
+     setItem([...result])
+  }
+
   return (
     <View style={styles.container}>
        <ScrollView style={{ margin: 20 }}>
-          <CartList cartList={items} />
+          <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} />
           <UserDetails details= {userDetails} />
           <Bill />
       </ScrollView>

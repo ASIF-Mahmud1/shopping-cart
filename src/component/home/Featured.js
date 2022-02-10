@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Item from './Item'
 import {itemList} from '../../../assets/data/items'
 import {storeData,getData} from '../../helper/helper'
+import { useIsFocused } from '@react-navigation/native';
 
 export default function Featured() {
   const [items, setItem]=useState([]) 
@@ -27,7 +28,7 @@ export default function Featured() {
 
     })
          
-  },[])
+  },[useIsFocused()])
 
   const handleAddToCart=(id)=>{
    const result= items.map((ele)=>{
