@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,Fragment} from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,ScrollView} from 'react-native';
 import CartList from '../component/checkout/CartList'
@@ -50,14 +50,25 @@ export default function Checkout({navigation}) {
 
   return (
     <View style={styles.container}>
-       <ScrollView style={{ margin: 20 }}>
-          <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
-          <UserDetails details= {userDetails} />
-          <Bill items={items} />
-      </ScrollView>
-      <TouchableOpacity  onPress={()=>{alert('Clicked')}} style={styles.checkOut} >
-         <Text style={styles.text}> Confirm </Text>
-      </TouchableOpacity>
+      {
+        items.length>0 
+        ?
+          <Fragment>
+
+            <ScrollView style={{ margin: 20 }}>
+              <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
+              <UserDetails details={userDetails} />
+              <Bill items={items.length > 0 ? items : []} />
+            </ScrollView>
+            <TouchableOpacity onPress={() => { alert('Clicked') }} style={styles.checkOut} >
+              <Text style={styles.text}> Confirm </Text>
+            </TouchableOpacity>
+            
+        </Fragment>
+        :
+        <Text style={{fontSize:20,marginTop:50}}>Your Cart is Empty</Text>
+      }
+   
     </View>
   );
 }

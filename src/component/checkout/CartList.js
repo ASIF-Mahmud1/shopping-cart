@@ -6,13 +6,12 @@ import Item   from '../home/Item'
 export default function CartList({cartList,handleRemoveFromCart,handleQuantity}) {
 
   return (
-    <View style={styles.container}>
-      <Text>CartList Component</Text>
+    <View style={styles.container}> 
       {
           cartList.map((item)=>{
               return <Item details={item} handleAddToCart={handleRemoveFromCart} >
                 <View style= {{  display:'flex', flexDirection:'row',  justifyContent: 'center',alignItems: 'center', }}>
-                      <TouchableOpacity disabled={item.qty===0} onPress={()=>{handleQuantity(item.id,-1)}}  >
+                      <TouchableOpacity disabled={item.qty===1} onPress={()=>{handleQuantity(item.id,-1)}}  >
                         <Text style={styles.text}> {'   -   ' }</Text>
                       </TouchableOpacity>
                       <Text>{item.qty} </Text>
