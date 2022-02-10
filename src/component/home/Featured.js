@@ -7,8 +7,26 @@ import {itemList} from '../../../assets/data/items'
 export default function Featured() {
   const [items, setItem]=useState([]) 
   useEffect(()=>{
-    setItem(itemList)
+    const result= itemList.map((ele)=>{return {...ele, added: false}})
+    setItem(result)
   },[])
+  const handleAddToCart=(id)=>{
+   const result= items.map((ele)=>{
+     if(ele.id===id)
+     {
+        return {
+          ...ele,
+          added: !ele.added
+        }
+     }
+     else
+     {
+       return ele
+     }
+   })
+
+   setItem(result)
+  }
 console.log(items);
   return (
     <View style={styles.container}>
@@ -16,7 +34,7 @@ console.log(items);
 
         {
           items.map((item) => {
-            return   <Item details={item}/>
+            return   <Item details={item} handleAddToCart={handleAddToCart} />
           })
         }
     
