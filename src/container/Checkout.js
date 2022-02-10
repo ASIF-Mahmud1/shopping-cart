@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity ,ScrollView} from 'react-nativ
 import CartList from '../component/checkout/CartList'
 import UserDetails from '../component/checkout/UserDetails'
 import Bill from '../component/checkout/Bill'
-
+import {getData} from '../helper/helper'
 
 
 export default function Checkout({navigation}) {
@@ -12,10 +12,23 @@ export default function Checkout({navigation}) {
     name:'Asif',
     address:"House#4, Dhaka, Bangladesh"
   }
+  
+  const [items, setItem]=useState([]) 
+
+  useEffect(()=>{
+    getData("cartList",(value)=>{
+      if(value!=null)
+      {
+        const result= value.map((item)=>{return {...item, qty:1}})
+        setItem(result)
+      }
+    })
+  },[])
+
   return (
     <View style={styles.container}>
        <ScrollView style={{ margin: 20 }}>
-          <CartList cartList={[]} />
+          <CartList cartList={items} />
           <UserDetails details= {userDetails} />
           <Bill />
       </ScrollView>

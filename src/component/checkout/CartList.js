@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { StyleSheet, Text, View, TouchableOpacity ,StatusBar} from 'react-native';
-import CartItem from './CartItem';
+import { StyleSheet, Text, View, TouchableOpacity ,StatusBar, Button} from 'react-native';
+import Item   from '../home/Item'
 export default function CartList({cartList}) {
 
   return (
@@ -9,7 +9,7 @@ export default function CartList({cartList}) {
       <Text>CartList Component</Text>
       {
           cartList.map((item)=>{
-              return <CartItem details={item}  />
+              return <Item details={item} handleAddToCart={()=>alert('1')} ><Button title='sda'/></Item>
           })
       }
       
