@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-
 import { StyleSheet, Text, View } from 'react-native';
 import Item from './Item'
 import {itemList} from '../../../assets/data/items'
@@ -16,36 +15,14 @@ export default function Featured() {
       
         for(let i=0;i<value.length;i++)
         {
-           let idx= result.findIndex((ele)=> {
-            if(  ele.id===value[i].id)   
-            {
-              console.log("if ",ele);
-              return true
-            }
-
-
-            else 
-            {
-           //   console.log("elese ",ele.id);
-              return false
-            }
-          
-          
-          })
+           let idx= result.findIndex((ele)=> ele.id=== value[i].id)
            if(idx!=-1)
            {
             result[idx]= {...result[idx], added:true}
-            console.log("found ya", idx)
-
-
            }
         }
      
-        console.log(value);
-      //  setCartList[value]
       }
-      console.log("before seeting ",result.filter((item)=>item.added===true  )  )
-
       setItem(result)
 
     })
@@ -74,7 +51,6 @@ export default function Featured() {
    setItem(result)
 
   }
-console.log(items);
   return (
     <View style={styles.container}>
       <Text>Featured Component</Text>
