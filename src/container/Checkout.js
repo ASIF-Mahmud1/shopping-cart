@@ -53,7 +53,7 @@ export default function Checkout({navigation}) {
        <ScrollView style={{ margin: 20 }}>
           <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
           <UserDetails details= {userDetails} />
-          <Bill />
+          <Bill items={items} />
       </ScrollView>
       <TouchableOpacity  onPress={()=>{alert('Clicked')}} style={styles.checkOut} >
          <Text style={styles.text}> Confirm </Text>
