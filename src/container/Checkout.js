@@ -31,11 +31,27 @@ export default function Checkout({navigation}) {
 
      setItem([...result])
   }
+  const handleQuantity=(id,value)=>{
+    const result= items.map((ele=>{
+      if(ele.id==id)
+      {
+         return  {
+           ...ele, qty: ele.qty+value
+         }
+      }
+      else 
+      {
+        return ele
+      }
+    }))
+
+    setItem([...result])
+  }
 
   return (
     <View style={styles.container}>
        <ScrollView style={{ margin: 20 }}>
-          <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} />
+          <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
           <UserDetails details= {userDetails} />
           <Bill />
       </ScrollView>
