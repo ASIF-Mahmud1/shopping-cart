@@ -10,12 +10,12 @@ export default function Item({details, handleAddToCart,children}) {
   }
   
   return (
-    <View style={[styles.container,added && styles.cart]}>
+    <View style={[styles.container,]}>
       {
-        added ? <TouchableOpacity style={styles.btn}  onPress={pressOnCart}>
+        added ? <TouchableOpacity style={[styles.btn,]}  onPress={pressOnCart}>
           <Text style={styles.text} >Remove From Cart</Text>
         </TouchableOpacity  >
-          : <TouchableOpacity style={styles.btn}  onPress={pressOnCart}>
+          : <TouchableOpacity style={[styles.btn , styles.cart]}  onPress={pressOnCart}>
             <Text style={styles.text}>Add to Cart</Text>
           </TouchableOpacity>
       }
