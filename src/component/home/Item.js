@@ -10,10 +10,10 @@ export default function Item({details, handleAddToCart}) {
   }
   
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,added && styles.cart]}>
        <TouchableOpacity onPress={pressOnCart}>
          <Text>Add to Cart {added.toString()}</Text>
-        <Image source={{ uri: imageUrl }} style={{ width: 305, height: 300 ,borderRadius:10}} />
+        <Image source={{ uri: imageUrl }} style={{ width: 300, height: 250 ,borderRadius:10}} />
         <Text>Category {category}</Text>
         <Text>Name: {name}</Text>
         <Text>Price: {price}</Text>
@@ -24,6 +24,12 @@ export default function Item({details, handleAddToCart}) {
 
 const styles = StyleSheet.create({
   container: {
- 
+    marginBottom:10,
+    borderRadius:10
   },
+  cart: {
+    backgroundColor:'#50C878',
+    opacity:0.8
+
+  }
 });

@@ -17,8 +17,11 @@ export default function Home({navigation}) {
           <Category/>
           <Featured/>
           <BestSale/>
-          <Button onPress={handleNavigation} title="Checkout" />
        </ScrollView>
+       <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
+         <Text style={styles.text}> Checkout </Text>
+         </TouchableOpacity>
+
     </View>
   );
 }
@@ -28,7 +31,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
- //   marginTop: 40
-  //  justifyContent: 'center',
   },
+  checkOut:{
+    height:50,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'red',
+    width: 300,
+    marginBottom:20,
+    color:'red',
+    borderRadius:10
+  },
+  text :
+  {
+    color:'white',
+   fontSize:20,
+   fontWeight:'bold',
+   fontStyle:"italic"
+  }
+
 });
