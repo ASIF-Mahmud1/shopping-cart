@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Home from './src/container/Home';
 import Checkout from './src/container/Checkout'
 import SingleCategory from './src/component/home/SingleCategory';
+import MyBills from './src/container/MyBills';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,7 +15,7 @@ const Stack = createNativeStackNavigator();
 export default function Authorised(){
  
   const RightButton = ({navigation}) => {
-    return <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
+    return <TouchableOpacity onPress={() => navigation.navigate("MyBills")}>
       <Text style={{ color: 'black' }} >My Bills</Text>
     </TouchableOpacity>
   }
@@ -25,6 +26,7 @@ export default function Authorised(){
               <Stack.Screen name='Home' component={Home} />
               <Stack.Screen name='Checkout' component={Checkout} /> 
               <Stack.Screen name='SingleCategory' component={SingleCategory} /> 
+              <Stack.Screen name='MyBills' component={MyBills}  options={() => ({headerRight: null})} /> 
           </Stack.Navigator>
         </NavigationContainer>
     )
