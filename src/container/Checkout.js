@@ -23,6 +23,13 @@ export default function Checkout({navigation}) {
         setItem(result)
       }
     })
+    ////////////////////////////////////////// navigate ot Home after 20 sec 
+    const timer = setTimeout(() => {
+     navigation.navigate("Home")
+     alert("You have waited more than 20 seconds in Checkout page")
+    }, 1000*20);
+    return () => clearTimeout(timer);
+    //////////////////////////////////////////
   },[])
 
   const handleRemoveFromCart=(id)=>{
