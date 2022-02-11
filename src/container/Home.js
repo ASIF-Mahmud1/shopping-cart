@@ -59,12 +59,15 @@ export default function Home({navigation}) {
   const handleNavigation=()=>{
     navigation.navigate('Checkout')
   }
+  const handleNavigationToCategory=()=>{
+    navigation.navigate('Checkout')
+  }
   const cartSize= items.filter((ele)=>ele.added===true).length
  
   return (
     <View style={styles.container}>
+        <Category items={items} handleNavigation={handleNavigationToCategory} />
         <ScrollView style={{ margin: 20 }}>
-          <Category/>
           <Featured items={items}  handleAddToCart={handleAddToCart} />
           <BestSale/>
        </ScrollView>
@@ -86,6 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+    paddingTop:30
   },
   checkOut:{
     height:50,
