@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Home from './src/container/Home';
 import Checkout from './src/container/Checkout'
 import SingleCategory from './src/component/home/SingleCategory';
@@ -12,10 +12,17 @@ console.disableYellowBox = true;
 
 const Stack = createNativeStackNavigator();
 export default function Authorised(){
+ 
+  const RightButton = ({navigation}) => {
+    return <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
+      <Text style={{ color: 'black' }} >My Bills</Text>
+    </TouchableOpacity>
+  }
+
     return(
       <NavigationContainer>
-          <Stack.Navigator>
-              <Stack.Screen name='Home' component={Home}/>
+          <Stack.Navigator screenOptions={({ navigation, route }) => ({headerRight: () => <RightButton navigation={navigation} />})} >  
+              <Stack.Screen name='Home' component={Home} />
               <Stack.Screen name='Checkout' component={Checkout} /> 
               <Stack.Screen name='SingleCategory' component={SingleCategory} /> 
           </Stack.Navigator>
