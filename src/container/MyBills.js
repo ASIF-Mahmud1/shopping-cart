@@ -1,8 +1,8 @@
 import React,{useEffect,useState} from 'react';
 
-import { StyleSheet, Text, View, TouchableOpacity ,StatusBar} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity ,ScrollView} from 'react-native';
 import {getData,storeData} from '../helper/helper'
-
+import Bill from '../component/checkout/Bill'
 export default function MyBills() {
     const [items, setItem]=useState([]) 
 
@@ -10,6 +10,7 @@ export default function MyBills() {
       getData("bills",(value)=>{
         if(value!=null)
         {
+            console.log("Inside my bills ",value);
           const result= value
           setItem(result)
         }
@@ -17,23 +18,29 @@ export default function MyBills() {
     },[])
   
   return (
-    <View style={styles.container}>
+    <ScrollView  contentContainerStyle={{alignItems:'center',backgroundColor:'white'}}> 
+
         {
              items.length>0 
              ? 
-             <Text>My Bills</Text>
+                 
+                     items.map((item)=>{
+                       return <View key={item} style={{paddingVertical:20}}>
+                                <Bill  items={item}/>
+                       </View>
+                     })
+
              :
              <Text style={{fontSize:20,marginTop:50}}>You Dont have any Bills</Text>
 
         }
+             </ScrollView>
 
-      <StatusBar style="auto" />
-    </View>
   );
 }
 
+
 const styles = StyleSheet.create({
-  container: {
- 
-  },
-});
+
+
+  });

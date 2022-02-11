@@ -32,6 +32,26 @@ export default function Checkout({navigation}) {
     //////////////////////////////////////////
   },[])
 
+  const handleConfirm=()=>{
+    const cartList = [...items]
+    getData("bills", (value) => {
+      if (value != null) {
+        const result = value
+        result.unshift(cartList)
+        storeData("bills", result)
+        storeData("cartList", [])
+      }
+      else 
+      {
+        storeData("bills", [cartList])
+        storeData("cartList", [])
+      }
+      navigation.navigate("Home")
+
+    })
+
+  }
+
   const handleRemoveFromCart=(id)=>{
      const result= items.filter((ele)=>ele.id !== id)
      storeData("cartList", result)
@@ -67,7 +87,7 @@ export default function Checkout({navigation}) {
               <UserDetails details={userDetails} />
               <Bill items={items.length > 0 ? items : []} />
             </ScrollView>
-            <TouchableOpacity onPress={() => { alert('Clicked') }} style={styles.checkOut} >
+            <TouchableOpacity onPress={() => { handleConfirm() }} style={styles.checkOut} >
               <Text style={styles.text}> Confirm </Text>
             </TouchableOpacity>
             
