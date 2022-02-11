@@ -26,10 +26,24 @@ const storeData = async (key, value, callback) => {
 
 
 
+const getListOfCategory=(items)=>{
+
+    const result = items.reduce(function (r, a) {
+        r[a.category] = r[a.category] || [];
+        r[a.category].push(a);
+        return r;
+    }, Object.create(null));
+
+ 
+    return result
+}
+
+
 
 
 export { 
 
     getData, 
-    storeData
+    storeData,
+    getListOfCategory
 }

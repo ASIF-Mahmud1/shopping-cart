@@ -1,15 +1,11 @@
 import React,{Fragment} from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar,ScrollView,Image} from 'react-native';
-import SingleCategory from './SingleCategory';
+import {getListOfCategory} from '../../helper/helper'
+
 export default function Category({items, handleNavigation}) {
-  const {imageUrl, category, name, price,added ,id} =items
   
-const result = items.reduce(function (r, a) {
-      r[a.category] = r[a.category] || [];
-      r[a.category].push(a);
-      return r;
-  }, Object.create(null));
+const result = getListOfCategory(items)
 
   
 const catagoryList= Object.keys(result)
@@ -22,7 +18,7 @@ const catagoryList= Object.keys(result)
           catagoryList.map((item) => {
             return (
 
-              <TouchableOpacity onPress={handleNavigation} style={[styles.checkOut, styles[item]]} >
+              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={[styles.checkOut, styles[item]]} >
                 <Text style={styles.text}> {item} </Text>
               </TouchableOpacity>
 

@@ -59,8 +59,8 @@ export default function Home({navigation}) {
   const handleNavigation=()=>{
     navigation.navigate('Checkout')
   }
-  const handleNavigationToCategory=()=>{
-    navigation.navigate('Checkout')
+  const handleNavigationToCategory=(category, list)=>{
+    navigation.navigate('SingleCategory',{category:category, list:list})
   }
   const cartSize= items.filter((ele)=>ele.added===true).length
  

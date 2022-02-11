@@ -2,13 +2,12 @@ import React from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar,Image} from 'react-native';
 
-export default function SingleCategory({details}) {
-    const {imageUrl, category, name, price,added ,id} =details
+export default function SingleCategory({route, navigation }) {
+  const { category, list } = route.params;
 
   return (
     <View style={styles.container}>
-        <Image source={{ uri: imageUrl }} style={{ width: 300, height: 50 ,borderRadius:10}} />
-        <Text>Category {category}</Text>
+        <Text>Category {category}{list.length}</Text>
     </View>
   );
 }
