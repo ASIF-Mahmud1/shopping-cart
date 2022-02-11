@@ -59,7 +59,7 @@ export default function Home({navigation}) {
   const handleNavigation=()=>{
     navigation.navigate('Checkout')
   }
-  const cartSize= result.filter((ele)=>ele.added===true).length
+  const cartSize= items.filter((ele)=>ele.added===true).length
  
   return (
     <View style={styles.container}>
