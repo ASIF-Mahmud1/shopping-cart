@@ -69,6 +69,8 @@ export default function Home({navigation}) {
         <Category items={items} handleNavigation={handleNavigationToCategory} />
         <ScrollView style={{ margin: 20 }}>
           <Featured items={items}  handleAddToCart={handleAddToCart} />
+          <Featured items={items}  handleAddToCart={handleAddToCart} />
+
           <BestSale/>
        </ScrollView>
        {
