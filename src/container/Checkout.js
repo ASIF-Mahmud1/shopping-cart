@@ -1,11 +1,11 @@
-import React,{useState,Fragment} from 'react';
+import React,{useState,Fragment,useEffect} from 'react';
 import { useFocusEffect } from '@react-navigation/native';
-import { StyleSheet, Text, View, TouchableOpacity ,ScrollView,ToastAndroid} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity ,ScrollView,ActivityIndicator} from 'react-native';
 import CartList from '../component/checkout/CartList'
 import UserDetails from '../component/checkout/UserDetails'
 import Bill from '../component/checkout/Bill'
 import {getData,storeData} from '../helper/helper'
-import {showToast} from '../helper/component/Toast'
+import {showToast,Loader} from '../helper/component/Indcator'
 
 
 
@@ -16,6 +16,8 @@ export default function Checkout({navigation}) {
   }
   
   const [items, setItem]=useState([]) 
+  const [timer, setTimer]=useState(null) 
+  const [loading, setLoading]=useState(false) 
 
   useFocusEffect(
     React.useCallback(() => {
@@ -26,15 +28,31 @@ export default function Checkout({navigation}) {
           setItem(result)
         }
       })
-      ////////////////////////////////////////// navigate ot Home after 20 sec 
-        const timer = setTimeout(() => {
+      ////////////////////////////////////////// navigate to Home after 20 sec 
+        const myTimer = setTimeout(() => {
           navigation.navigate("Home")
-          showToast()
+          showToast("You have waited more than 20 seconds in Checkout page")
         }, 1000*20);
-        return () => clearTimeout(timer);
+        setTimer(myTimer)
+        return () => clearTimeout(myTimer);
      //////////////////////////////////////////
     }, [])
   );
+
+
+  useEffect(()=>{
+   if(loading===true)
+   {
+     ////////////////////////////////////////// loading for 5 sec after Confirm 
+     const myTimer = setTimeout(() => {
+      navigation.navigate("Home")
+      showToast("Thank You for Shopping!")
+    }, 1000*2);
+    setTimer(myTimer)
+    return () => clearTimeout(timer);
+ //////////////////////////////////////////
+   }
+  },[loading])
 
   const handleConfirm=()=>{
     const cartList = [...items]
@@ -50,7 +68,8 @@ export default function Checkout({navigation}) {
         storeData("bills", [cartList])
         storeData("cartList", [])
       }
-      navigation.navigate("Home")
+      clearTimeout(timer)
+      setLoading(true)
 
     })
 
@@ -81,6 +100,8 @@ export default function Checkout({navigation}) {
 
   return (
     <View style={styles.container}>
+       <Loader loading={loading} />
+              
       {
         items.length>0 
         ?
@@ -99,7 +120,7 @@ export default function Checkout({navigation}) {
         :
         <Text style={{fontSize:20,marginTop:50}}>Your Cart is Empty</Text>
       }
-   
+       
     </View>
   );
 }
