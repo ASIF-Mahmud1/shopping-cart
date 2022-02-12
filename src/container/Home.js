@@ -66,7 +66,7 @@ export default function Home({navigation}) {
  
   return (
     <View style={styles.container}>
-        <ScrollView style={{ margin: 20 }}>
+        <ScrollView style={{ margin: 10 }}>
           <Category items={items} handleNavigation={handleNavigationToCategory} />
           <Featured items={items}  handleAddToCart={handleAddToCart} />        
           <BestSale  items={items}  handleAddToCart={handleAddToCart} />
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    paddingTop:30
+    paddingTop:5
   },
   checkOut:{
     height:50,

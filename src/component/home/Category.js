@@ -21,7 +21,7 @@ const catagoryList= Object.keys(result)
 
               <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={{paddingBottom:10,alignItems:'center'}} >
                   <Text style={styles.text}> {item} </Text>
-                  <Image source={{ uri:ItemCategory[item] }} style={{ margin:30,width: 150, height: 150 ,borderRadius:30}} />
+                  <Image source={{ uri:ItemCategory[item] }} style={{ margin:15, padding:30,width: 160, height: 160 ,borderRadius:30}} />
               </TouchableOpacity>
 
             )
