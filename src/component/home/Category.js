@@ -2,9 +2,10 @@ import React,{Fragment} from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar,ScrollView,Image} from 'react-native';
 import {getListOfCategory} from '../../helper/helper'
+import {ItemCategory}from '../../../assets/data/items'
 
 export default function Category({items, handleNavigation}) {
-  
+ 
 const result = getListOfCategory(items)
 
   
@@ -18,8 +19,12 @@ const catagoryList= Object.keys(result)
           catagoryList.map((item) => {
             return (
 
-              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={[styles.checkOut, styles[item]]} >
-                <Text style={styles.text}> {item} </Text>
+              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={{paddingBottom:200,alignItems:'center'}} >
+               <Text style={styles.text}> {item} </Text>
+               {
+                 console.log([item])
+               }
+               <Image source={{ uri:ItemCategory[item] }} style={{ margin:30,width: 150, height: 150 ,borderRadius:30}} />
               </TouchableOpacity>
 
             )
@@ -34,6 +39,7 @@ const catagoryList= Object.keys(result)
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
+  
  
   },
   checkOut:{
@@ -51,12 +57,12 @@ const styles = StyleSheet.create({
   },
   text :
   {
-    color:'white',
+    color:'black',
    fontSize:20,
    fontWeight:'bold',
    fontStyle:"italic"
   },
-  Children:{
+  Kids:{
     backgroundColor:'red',
   },
   Men:{
