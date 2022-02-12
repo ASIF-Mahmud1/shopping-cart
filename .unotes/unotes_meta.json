@@ -64,7 +64,14 @@
         "helper": {
           "name": "helper",
           "isOrdered": true,
-          "folders": {},
+          "folders": {
+            "component": {
+              "name": "component",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
           "files": {}
         }
       },
