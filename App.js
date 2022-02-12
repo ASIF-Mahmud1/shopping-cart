@@ -15,8 +15,8 @@ const Stack = createNativeStackNavigator();
 export default function Authorised(){
  
   const RightButton = ({navigation}) => {
-    return <TouchableOpacity onPress={() => navigation.navigate("MyBills")}>
-      <Text style={{ color: 'black' }} >My Bills</Text>
+    return <TouchableOpacity style={styles.rightBtn} onPress={() => navigation.navigate("MyBills")}>
+      <Text style={styles.rightBtnText} >My Bills</Text>
     </TouchableOpacity>
   }
 
@@ -41,4 +41,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  rightBtn:{
+    borderColor:'pink',
+    fontWeight:'bold', 
+    borderRadius:10,
+    padding:5, 
+    borderWidth:2
+  },
+  rightBtnText:{
+    color: 'black', fontWeight:'600'
+  }
 });
