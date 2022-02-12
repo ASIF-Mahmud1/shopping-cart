@@ -10,7 +10,6 @@ export default function MyBills() {
       getData("bills",(value)=>{
         if(value!=null)
         {
-            console.log("Inside my bills ",value);
           const result= value
           setItem(result)
         }
@@ -24,8 +23,8 @@ export default function MyBills() {
              items.length>0 
              ? 
                  
-                     items.map((item)=>{
-                       return <View key={item} style={{paddingVertical:20}}>
+                     items.map((item,index)=>{
+                       return <View key={index} style={{paddingVertical:20}}>
                                 <Bill  items={item}/>
                        </View>
                      })

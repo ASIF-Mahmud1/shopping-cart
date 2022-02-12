@@ -1,10 +1,12 @@
-import React,{useState,useEffect,Fragment} from 'react';
-
-import { StyleSheet, Text, View, TouchableOpacity ,ScrollView} from 'react-native';
+import React,{useState,Fragment} from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import { StyleSheet, Text, View, TouchableOpacity ,ScrollView,ToastAndroid} from 'react-native';
 import CartList from '../component/checkout/CartList'
 import UserDetails from '../component/checkout/UserDetails'
 import Bill from '../component/checkout/Bill'
 import {getData,storeData} from '../helper/helper'
+import {showToast} from '../helper/component/Toast'
+
 
 
 export default function Checkout({navigation}) {
@@ -15,22 +17,24 @@ export default function Checkout({navigation}) {
   
   const [items, setItem]=useState([]) 
 
-  useEffect(()=>{
-    getData("cartList",(value)=>{
-      if(value!=null)
-      {
-        const result= value.map((item)=>{return {...item, qty:1}})
-        setItem(result)
-      }
-    })
-    ////////////////////////////////////////// navigate ot Home after 20 sec 
-    const timer = setTimeout(() => {
-     navigation.navigate("Home")
-     alert("You have waited more than 20 seconds in Checkout page")
-    }, 1000*20);
-    return () => clearTimeout(timer);
-    //////////////////////////////////////////
-  },[])
+  useFocusEffect(
+    React.useCallback(() => {
+      getData("cartList",(value)=>{
+        if(value!=null)
+        {
+          const result= value.map((item)=>{return {...item, qty:1}})
+          setItem(result)
+        }
+      })
+      ////////////////////////////////////////// navigate ot Home after 20 sec 
+        const timer = setTimeout(() => {
+          navigation.navigate("Home")
+          showToast()
+        }, 1000*20);
+        return () => clearTimeout(timer);
+     //////////////////////////////////////////
+    }, [])
+  );
 
   const handleConfirm=()=>{
     const cartList = [...items]
