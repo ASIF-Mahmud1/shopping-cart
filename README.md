@@ -20,7 +20,7 @@ A video recording of the application can be seen, by clicking on the link above.
 
 1\. clone the repository
 
-2\. cd shopping\_cart
+2\. cd shopping-cart
 
 3\. npm install
 
