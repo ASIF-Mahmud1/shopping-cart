@@ -19,8 +19,10 @@ A video recording of the application can be seen, by clicking on the link above.
 2\. cd shopping\_cart
 3\. npm install
 4\. Open a terminal run: <i>**npx react-native start**</i>
-5\. Open another terminal and run:  <i>**npx react-native run-android**</i>**Note:** You must be connected to a device or an emulator
-To check if you are connected to a device/emulator run\*\*:\*\* <i>**adb devices**</i>
+5\. Open another terminal and run:  <i>**npx react-native run-android**&nbsp;</i>
+<i></i>
+**Note:** You must be connected to a device or an emulator
+To check if you are connected to a device/emulator run:  <i>**adb devices**</i>
 
 # Testing
 
@@ -34,7 +36,7 @@ React, React Native, React Navigation, Stack Navigator, JavaScript, mobile app d
 
 # Notes
 <br>
-<span class="colour" style="color:rgb(167, 159, 147)">For futher queries, please contact me via email at : [asif01050105@gmail.com](mailto:asif01050105@gmail.com)</span>
+<span class="colour" style="color:rgb(167, 159, 147)">For futher queries, please contact me via email at : asif01050105@gmail.com</span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>-Asif Mahmud
