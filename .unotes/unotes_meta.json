@@ -1,0 +1,77 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "__tests__": {
+      "name": "__tests__",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "android": {
+      "name": "android",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "assets": {
+      "name": "assets",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "ios": {
+      "name": "ios",
+      "isOrdered": true,
+      "folders": {
+        "shopping_cart": {
+          "name": "shopping_cart",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "shopping_cart.xcodeproj": {
+          "name": "shopping_cart.xcodeproj",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "shopping_cartTests": {
+          "name": "shopping_cartTests",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "component": {
+          "name": "component",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "container": {
+          "name": "container",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "helper": {
+          "name": "helper",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}
