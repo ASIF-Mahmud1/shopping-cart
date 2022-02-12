@@ -37,13 +37,13 @@ To check if you are connected to a device/emulator run:  <i>**adb devices**</i
 * The app is tested on the following OS: Android (10)
 * The app is tested on the following devices: Redmi Note 7 Pro, Samsung Galaxy S7 Edge
 
-<br>
+
+
 # Keywords
-<br>
+
 React ,  React Native , React Navigation , Stack Navigator , JavaScript , mobile app development
 
 # Notes
-<br>
 <span class="colour" style="color:rgb(167, 159, 147)">For futher queries, please contact me via email at : asif01050105@gmail.com</span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>
