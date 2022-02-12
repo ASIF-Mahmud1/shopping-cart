@@ -22,13 +22,11 @@ export default function MyBills() {
         {
              items.length>0 
              ? 
-                 
-                     items.map((item,index)=>{
-                       return <View key={index} style={{paddingVertical:20}}>
-                                <Bill  items={item}/>
-                       </View>
-                     })
-
+              items.map((item,index)=>{
+                return <View key={index} style={{paddingVertical:20}}>
+                        <Bill  items={item}/>
+                </View>
+              })
              :
              <Text style={{fontSize:20,marginTop:50}}>You Dont have any Bills</Text>
 

@@ -8,7 +8,7 @@ export default function Featured({items,handleAddToCart}) {
   
   return (
     <View style={styles.container}>
-      <Text style={{color:'orange', fontWeight:"bold",fontSize:20, margin:5}}>Featured</Text>
+      <Text style={styles.title}>Featured</Text>
       <ScrollView horizontal={true} style={{ margin: 2 }}>
 
         {
@@ -25,4 +25,10 @@ const styles = StyleSheet.create({
   container: {
  
   },
+  title :{
+    color:'orange', 
+    fontWeight:"bold",
+    fontSize:20,
+    margin:5
+  }
 });

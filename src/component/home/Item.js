@@ -14,22 +14,20 @@ export default function Item({details, handleAddToCart,children}) {
       {
         added ? <TouchableOpacity style={[styles.btn,]}  onPress={pressOnCart}>
           <Text style={styles.text} >Remove From Cart</Text>
-            <Image source={{ uri: trash }} style={{ marginRight:0,width: 30, height: 25 ,borderRadius:20}} />
+            <Image source={{ uri: trash }} style={styles.trashImg} />
 
         </TouchableOpacity  >
           : <TouchableOpacity style={[styles.btn , styles.cart]}  onPress={pressOnCart}>
             <Text style={styles.text}>Add to Cart</Text>
-            <Image source={{ uri: shoppingCart }} style={{ marginRight:0,width: 25, height: 22 ,borderRadius:30}} />
+            <Image source={{ uri: shoppingCart }} style={styles.cartImg} />
 
           </TouchableOpacity>
       }
 
-       {/* <TouchableOpacity> */}
-        <Image source={{ uri: imageUrl }} style={{ width: 300, height: 250 ,borderRadius:10}} />
+        <Image source={{ uri: imageUrl }} style={styles.itemImg} />
         <Text>Category {category}</Text>
         <Text>Name: {name}</Text>
         <Text>Price: {price}</Text>
-      {/* </TouchableOpacity> */}
           {children}
     </View>
   );
@@ -64,5 +62,24 @@ const styles = StyleSheet.create({
    fontWeight:'bold',
    fontStyle:"italic",
    marginRight:5
-  }
+  },
+  trashImg:{
+    marginRight:0,
+    width: 30, 
+    height: 25 ,
+    borderRadius:20
+  },
+
+  cartImg:{
+    marginRight:0,
+    width: 25,
+    height: 22 ,
+    borderRadius:30
+  },
+
+  itemImg:{
+    width: 300, 
+    height: 250 ,
+    borderRadius:10
+  },
 });

@@ -13,15 +13,15 @@ const catagoryList= Object.keys(result)
 
   return (
     <Fragment>
-      <Text style={{color:'orange', fontWeight:"bold",fontSize:20, margin:5}}>Categories</Text>
+      <Text style={styles.category}>Categories</Text>
       <ScrollView horizontal={true} style={styles.container}>
         {
           catagoryList.map((item) => {
             return (
 
-              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={{paddingBottom:10,alignItems:'center'}} >
+              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={styles.btn} >
                   <Text style={styles.text}> {item} </Text>
-                  <Image source={{ uri:ItemCategory[item] }} style={{ margin:15, padding:30,width: 160, height: 160 ,borderRadius:30}} />
+                  <Image source={{ uri:ItemCategory[item] }} style={styles.image} />
               </TouchableOpacity>
 
             )
@@ -67,5 +67,23 @@ const styles = StyleSheet.create({
   },
   Women:{
     backgroundColor:'orange',
+  },
+  category:{
+    color:'orange',
+    fontWeight:"bold",
+    fontSize:20, 
+    margin:5
+  },
+  image:{
+    margin: 15,
+    padding: 30,
+    width: 160,
+    height: 160,
+    borderRadius: 30
+  },
+  btn:{
+    paddingBottom:10,
+    alignItems: 'center'
   }
+
 });

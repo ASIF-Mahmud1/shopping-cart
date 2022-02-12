@@ -12,24 +12,24 @@ export default function Bill({items}) {
 
   return (
     <View style={styles.container}>
-      <Text style={{fontWeight:"bold"}}>Your Bill</Text>
-      <View style={{display:'flex',flexDirection:'row'}}>
-        <Text style={{marginRight:40}}>SubTotal :{" "} </Text>
-        <Text style={{marginLeft:40}}>{subTotal}{" BDT"}</Text>
+      <Text style={styles.bill}>Your Bill</Text>
+      <View style={styles.box}>
+        <Text style={styles.leftText}>SubTotal :{" "} </Text>
+        <Text style={styles.rightText}>{subTotal}{" BDT"}</Text>
       </View>
-      <View style={{display:'flex',flexDirection:'row'}}>
-      <Text  style={{marginRight:40}}>Discount: </Text>
-      <Text style={{marginLeft:40}}>  {discount} % </Text>
+      <View style={styles.box}>
+      <Text style={styles.leftText}>Discount: </Text>
+      <Text style={styles.rightText}>  {discount} % </Text>
       </View>
 
-      <View style={{display:'flex',flexDirection:'row'}}>
-      <Text  style={{marginRight:40}}>Shipping :</Text>
-      <Text style={{marginLeft:40}}>  {shipping}{" BDT"} </Text>
+      <View style={styles.box}>
+      <Text  style={styles.leftText}>Shipping :</Text>
+      <Text style={styles.rightText}>  {shipping}{" BDT"} </Text>
       </View>
     
-      <View style={{display:'flex',flexDirection:'row'}}>
-           <Text  style={{marginRight:40}}>Total  :{"      "}</Text>
-           <Text style={{marginLeft:40}}> {total} {" BDT"} </Text>
+      <View style={styles.box}>
+           <Text  style={styles.leftText}>Total  :{"      "}</Text>
+           <Text style={styles.rightText}> {total} {" BDT"} </Text>
       </View>
     </View>
   );
@@ -39,4 +39,17 @@ const styles = StyleSheet.create({
   container: {
  
   },
+  bill:{
+    fontWeight:"bold"
+  },
+  box: {
+    display:'flex',flexDirection:'row'
+  },
+  leftText:{
+    marginRight:40
+  },
+  rightText:{
+    marginLeft:40
+  }
+
 });

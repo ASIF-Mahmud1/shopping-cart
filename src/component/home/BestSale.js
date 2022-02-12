@@ -8,13 +8,13 @@ export default function BestSale({items,handleAddToCart}) {
   
   return (
     <View style={styles.container}>
-        <Text style={{color:'orange', fontWeight:"bold",fontSize:20, margin:5}}>Best Sale</Text>
+        <Text style={styles.text}>Best Sale</Text>
 
       <ScrollView horizontal={true} style={{ margin: 2 }}>
 
         {
-          bestSale.map((item) => {
-            return   <Item details={item} handleAddToCart={handleAddToCart} />
+          bestSale.map((item,index) => {
+            return   <Item key={index} details={item} handleAddToCart={handleAddToCart} />
           })
         }
     </ScrollView>
@@ -26,4 +26,10 @@ const styles = StyleSheet.create({
   container: {
  
   },
+  text:{
+    color:'orange', 
+    fontWeight:"bold",
+    fontSize:20,
+    margin:5
+  }
 });

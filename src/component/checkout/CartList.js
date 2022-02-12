@@ -10,7 +10,7 @@ export default function CartList({cartList,handleRemoveFromCart,handleQuantity})
       {
           cartList.map((item)=>{
               return <Item details={item} handleAddToCart={handleRemoveFromCart} >
-                <View style= {{  display:'flex', flexDirection:'row',  justifyContent: 'center',alignItems: 'center', }}>
+                <View style= {styles.card}>
                       <TouchableOpacity disabled={item.qty===1} onPress={()=>{handleQuantity(item.id,-1)}}  >
                         <Text style={styles.text}> {'   -   ' }</Text>
                       </TouchableOpacity>
@@ -36,9 +36,15 @@ const styles = StyleSheet.create({
 
   text :
   {
-    color:'black',
+   color:'black',
    fontSize:40,
    fontWeight:'bold',
    fontStyle:"italic"
+  },
+  card:{
+    display:'flex',
+    flexDirection:'row',  
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });
