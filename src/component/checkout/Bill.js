@@ -12,7 +12,7 @@ export default function Bill({items}) {
 
   return (
     <View style={styles.container}>
-      <Text >Your Bill</Text>
+      <Text style={{fontWeight:"bold"}}>Your Bill</Text>
       <View style={{display:'flex',flexDirection:'row'}}>
         <Text style={{marginRight:40}}>SubTotal :{" "} </Text>
         <Text style={{marginLeft:40}}>{subTotal}{" BDT"}</Text>

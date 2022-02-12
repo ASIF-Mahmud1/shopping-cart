@@ -13,18 +13,15 @@ const catagoryList= Object.keys(result)
 
   return (
     <Fragment>
-      <Text>Categories</Text>
+      <Text style={{color:'orange', fontWeight:"bold",fontSize:20, margin:5}}>Categories</Text>
       <ScrollView horizontal={true} style={styles.container}>
         {
           catagoryList.map((item) => {
             return (
 
-              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={{paddingBottom:200,alignItems:'center'}} >
-               <Text style={styles.text}> {item} </Text>
-               {
-                 console.log([item])
-               }
-               <Image source={{ uri:ItemCategory[item] }} style={{ margin:30,width: 150, height: 150 ,borderRadius:30}} />
+              <TouchableOpacity onPress={()=>handleNavigation(item,result[item])} style={{paddingBottom:10,alignItems:'center'}} >
+                  <Text style={styles.text}> {item} </Text>
+                  <Image source={{ uri:ItemCategory[item] }} style={{ margin:30,width: 150, height: 150 ,borderRadius:30}} />
               </TouchableOpacity>
 
             )

@@ -8,8 +8,7 @@ export default function Featured({items,handleAddToCart}) {
   
   return (
     <View style={styles.container}>
-            <Text>Featured Component</Text>
-
+      <Text style={{color:'orange', fontWeight:"bold",fontSize:20, margin:5}}>Featured</Text>
       <ScrollView horizontal={true} style={{ margin: 2 }}>
 
         {

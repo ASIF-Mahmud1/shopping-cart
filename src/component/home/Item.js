@@ -24,12 +24,12 @@ export default function Item({details, handleAddToCart,children}) {
           </TouchableOpacity>
       }
 
-       <TouchableOpacity>
+       {/* <TouchableOpacity> */}
         <Image source={{ uri: imageUrl }} style={{ width: 300, height: 250 ,borderRadius:10}} />
         <Text>Category {category}</Text>
         <Text>Name: {name}</Text>
         <Text>Price: {price}</Text>
-      </TouchableOpacity>
+      {/* </TouchableOpacity> */}
           {children}
     </View>
   );
