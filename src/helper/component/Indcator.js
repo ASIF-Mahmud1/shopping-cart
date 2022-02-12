@@ -1,0 +1,21 @@
+import React,{Fragment} from "react";
+import { ToastAndroid ,Text,ActivityIndicator} from "react-native";
+
+const showToast = (message) => {
+  ToastAndroid.show(message, ToastAndroid.LONG);
+};
+
+const Loader =({loading} )=>{
+    return <Fragment>
+        <ActivityIndicator size="large" color="#00ff00" animating={loading} />
+    {
+       loading && <Text>Please Wait</Text>
+    }
+    </Fragment>
+}
+
+
+export {
+  showToast, 
+  Loader
+}
