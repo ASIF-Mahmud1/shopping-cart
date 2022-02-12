@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
+import { StyleSheet, Text, View,ScrollView } from 'react-native';
+import Item from './Item'
 
-import { StyleSheet, Text, View, TouchableOpacity ,StatusBar} from 'react-native';
+export default function BestSale({items,handleAddToCart}) {
 
-export default function BestSale() {
-
+  const bestSale= items.filter((ele)=> ele.bestSale)
+  
   return (
     <View style={styles.container}>
-      <Text>Best Sale Component</Text>
-  
-      <StatusBar style="auto" />
+            <Text>BestSale Component</Text>
+
+      <ScrollView horizontal={true} style={{ margin: 2 }}>
+
+        {
+          bestSale.map((item) => {
+            return   <Item details={item} handleAddToCart={handleAddToCart} />
+          })
+        }
+    </ScrollView>
     </View>
   );
 }
