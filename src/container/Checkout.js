@@ -29,12 +29,12 @@ export default function Checkout({navigation}) {
         }
       })
       ////////////////////////////////////////// navigate to Home after 20 sec 
-        // const myTimer = setTimeout(() => {
-        //   navigation.navigate("Home")
-        //   showToast("You have waited more than 20 seconds in Checkout page")
-        // }, 1000*20);
-        // setTimer(myTimer)
-        // return () => clearTimeout(myTimer);
+        const myTimer = setTimeout(() => {
+          navigation.navigate("Home")
+          showToast("You have waited more than 20 seconds in Checkout page")
+        }, 1000*20);
+        setTimer(myTimer)
+        return () => clearTimeout(myTimer);
      //////////////////////////////////////////
     }, [])
   );
