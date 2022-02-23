@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar, TextInput} from 'react-native';
+import GradientButton from '../../helper/component/GradientButton';
 
 export default function Login({navigation}) {
   const [input, setInput]= useState('')
@@ -14,11 +15,13 @@ export default function Login({navigation}) {
 
       <Text style ={styles.label}>Phone </Text>
 
-      <TextInput keyboardType='numeric' placeholder='Phone' value={input} onChange={(value)=>{setInput(value)}} />
-  
-      <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
-         <Text style={styles.text}> Login  </Text>
-         </TouchableOpacity>
+      <TextInput style={styles.input} keyboardType='numeric' placeholder='Phone' value={input} onChange={(value)=>{setInput(value)}} />
+      <GradientButton>
+          <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
+              <Text style={styles.text}> Login  </Text>
+          </TouchableOpacity>
+      </GradientButton>
+     
         
     </View>
   );
@@ -28,24 +31,25 @@ const styles = StyleSheet.create({
   container: {
     display:'flex',
     flex: 1,
+    
     backgroundColor:'white',
     paddingLeft:20
   },
   login:{
     fontSize:30,
+    marginBottom:20
   
+  },
+  input:{
+    marginBottom:20
   },
   checkOut:{
     height:50,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#301934',
-    width: 300,
-    marginTop:50,
-    color:'red',
     borderRadius:10,
-    alignSelf:'center'
+  
   },
   text :
   {

@@ -14,7 +14,9 @@ return <LinearGradient
 
 const styles = StyleSheet.create({ 
     linearGradient:{
-        borderRadius:6
+        borderRadius:6,
+        width:300,
+        marginHorizontal:20
       }
 
 })
