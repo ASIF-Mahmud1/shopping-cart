@@ -11,6 +11,9 @@ export default function Login({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.login}>Login </Text>
+
+      <Text style ={styles.label}>Phone </Text>
+
       <TextInput keyboardType='numeric' placeholder='Phone' value={input} onChange={(value)=>{setInput(value)}} />
   
       <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
@@ -51,4 +54,10 @@ const styles = StyleSheet.create({
    fontWeight:'bold',
    fontStyle:"italic"
   },
+  label:{
+    paddingTop:10,
+    paddingLeft:4,
+    fontSize:12,
+    fontWeight:"300"
+  }
 });
