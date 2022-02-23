@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Home from './src/container/Home';
@@ -6,6 +6,7 @@ import Checkout from './src/container/Checkout'
 import SingleCategory from './src/component/home/SingleCategory';
 import MyBills from './src/container/MyBills';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SplashScreen from 'react-native-splash-screen'
 
 import { NavigationContainer } from '@react-navigation/native';
 console.disableYellowBox = true;
@@ -13,7 +14,11 @@ console.disableYellowBox = true;
 
 const Stack = createNativeStackNavigator();
 export default function Authorised(){
- 
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
+
   const RightButton = ({navigation}) => {
     return <TouchableOpacity style={styles.rightBtn} onPress={() => navigation.navigate("MyBills")}>
       <Text style={styles.rightBtnText} >My Bills</Text>
