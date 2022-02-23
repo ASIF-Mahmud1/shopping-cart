@@ -32,9 +32,9 @@ export default function Authorised(){
 
     return(
       <NavigationContainer>
-              <Stack.Navigator screenOptions={({ navigation, route }) => ({headerRight: () => <RightButton navigation={navigation} />})} >  
-              <Stack.Screen name='Welcome' component={Welcome} />
-              <Stack.Screen name='Login' component={Login} />
+              <Stack.Navigator screenOptions={{  title:""}} >  
+              <Stack.Screen name='Welcome' component={Welcome}  options={{headerShown:false}} />
+              <Stack.Screen name='Login' component={Login}   />
               <Stack.Screen name='Verify' component={Verify} />
               <Stack.Screen name='Home' component={Home} />
               <Stack.Screen name='Checkout' component={Checkout} /> 
