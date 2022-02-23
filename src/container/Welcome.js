@@ -1,20 +1,58 @@
 import React from 'react';
 
-import { StyleSheet, Text, View, TouchableOpacity ,StatusBar} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity ,Image} from 'react-native';
 
-export default function Welcome() {
-
+export default function Welcome({navigation}) {
+  const handleNavigation=()=>{
+    navigation.navigate('Login')
+  }
   return (
     <View style={styles.container}>
-      <Text>Welcome Component</Text>
-  
-      <StatusBar style="auto" />
+      <Text style={styles.info}>Welcome To Bolt</Text>
+     
+      <Image source={require("../../assets/image/intro.png")} style={styles.image} />
+      <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
+         <Text style={styles.text}> Login With Phone </Text>
+         </TouchableOpacity>
+         <Text  style={styles.info}>Shop With Us</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
- 
+    display:'flex',
+    flex: 1,
+    alignItems:'center',
+    backgroundColor:'white',
+    backfaceVisibility:"hidden" ,
+   justifyContent:'space-evenly',
+  // height:10000
   },
+  image:{
+    marginTop:30
+   
+  },
+  checkOut:{
+    height:50,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#301934',
+    width: 300,
+    marginTop:50,
+    color:'red',
+    borderRadius:10
+  },
+  text :
+  {
+    color:'white',
+   fontSize:20,
+   fontWeight:'bold',
+   fontStyle:"italic"
+  },
+  info:{
+    fontSize:18,
+    fontWeight:'bold',
+  }
 });
