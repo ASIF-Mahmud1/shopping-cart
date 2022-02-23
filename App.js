@@ -7,6 +7,11 @@ import SingleCategory from './src/component/home/SingleCategory';
 import MyBills from './src/container/MyBills';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from 'react-native-splash-screen'
+import Welcome from './src/container/Welcome'
+import Login from './src/component/welcome/Login';
+import Verify from './src/component/welcome/Verify';
+
+
 
 import { NavigationContainer } from '@react-navigation/native';
 console.disableYellowBox = true;
@@ -27,7 +32,10 @@ export default function Authorised(){
 
     return(
       <NavigationContainer>
-          <Stack.Navigator screenOptions={({ navigation, route }) => ({headerRight: () => <RightButton navigation={navigation} />})} >  
+              <Stack.Navigator screenOptions={({ navigation, route }) => ({headerRight: () => <RightButton navigation={navigation} />})} >  
+              <Stack.Screen name='Welcome' component={Welcome} />
+              <Stack.Screen name='Login' component={Login} />
+              <Stack.Screen name='Verify' component={Verify} />
               <Stack.Screen name='Home' component={Home} />
               <Stack.Screen name='Checkout' component={Checkout} /> 
               <Stack.Screen name='SingleCategory' component={SingleCategory} /> 
