@@ -29,12 +29,12 @@ export default function Checkout({navigation}) {
         }
       })
       ////////////////////////////////////////// navigate to Home after 20 sec 
-        const myTimer = setTimeout(() => {
-          navigation.navigate("Home")
-          showToast("You have waited more than 20 seconds in Checkout page")
-        }, 1000*20);
-        setTimer(myTimer)
-        return () => clearTimeout(myTimer);
+        // const myTimer = setTimeout(() => {
+        //   navigation.navigate("Home")
+        //   showToast("You have waited more than 20 seconds in Checkout page")
+        // }, 1000*20);
+        // setTimer(myTimer)
+        // return () => clearTimeout(myTimer);
      //////////////////////////////////////////
     }, [])
   );
@@ -109,7 +109,7 @@ export default function Checkout({navigation}) {
         ?
           <Fragment>
 
-            <ScrollView style={{ margin: 20 }}>
+            <ScrollView>
               <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
               <UserDetails details={userDetails} />
               <Bill items={items.length > 0 ? items : []} />
@@ -137,6 +137,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+    marginTop:-8,
+    paddingBottom:15
 
   },
   checkOut:{
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
   login:{
     fontSize:30,
     backgroundColor:'white',
-    paddingLeft:15
+    paddingLeft:15,
     
   },
   backHome:{
@@ -169,6 +171,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 300,
-    borderRadius:10
+    borderRadius:10,
   },
 });
