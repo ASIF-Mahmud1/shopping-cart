@@ -53,7 +53,7 @@ export default function Home({navigation}) {
        
     const forCart= result.filter((ele)=>ele.added===true)
     storeData("cartList", forCart)
-    showToast("Added to Cart")
+    showToast("Added to Cart","SHORT")
     setItem(result)
  
    }

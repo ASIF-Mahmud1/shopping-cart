@@ -1,7 +1,8 @@
 import React,{Fragment} from "react";
 import { ToastAndroid ,Text,ActivityIndicator} from "react-native";
 
-const showToast = (message) => {
+const showToast = (message,duration) => {
+  duration ? ToastAndroid.show(message, ToastAndroid[duration]):
   ToastAndroid.show(message, ToastAndroid.LONG);
 };
 
