@@ -12,7 +12,7 @@
 
 3\. If a user waits for more than 20 seconds in the *Checkout* screen, it redirects to the *Home.*
 <br>
-## [Demo Video Link](https://drive.google.com/file/d/1x9vpCBUiqTxM1Sf2YIuSgEaY4rRXtI6D/view?usp=sharing)
+## [Demo Video Link](https://drive.google.com/file/d/14R42XGjgimpYmckXyFhIQ5369iZTTOY3/view?usp=sharing)
 
 A video recording of the application can be seen, by clicking on the link above.
 <br>
@@ -20,7 +20,7 @@ A video recording of the application can be seen, by clicking on the link above.
 
 1\. clone the repository
 
-2\. cd shopping-cart
+2\. cd shopping\-cart
 
 3\. npm install
 
@@ -37,14 +37,14 @@ To check if you are connected to a device/emulator run:  <i>**adb devices**</i
 * The app is tested on the following OS: Android (10)
 * The app is tested on the following devices: Redmi Note 7 Pro, Samsung Galaxy S7 Edge
 
-
-
 # Keywords
 
-React ,  React Native , React Navigation , Stack Navigator , JavaScript , mobile app development
+React , React Native , React Navigation , Stack Navigator , JavaScript , mobile app development
 
 # Notes
+
 <span class="colour" style="color:rgb(167, 159, 147)">For futher queries, please contact me via email at : asif01050105@gmail.com</span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>
 <span class="colour" style="color:rgb(167, 159, 147)"></span>
-<span class="colour" style="color:rgb(167, 159, 147)"></span><br/>- Asif Mahmud
+<span class="colour" style="color:rgb(167, 159, 147)"></span>
+\- Asif Mahmud
