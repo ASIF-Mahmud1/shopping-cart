@@ -6,7 +6,7 @@ import UserDetails from '../component/checkout/UserDetails'
 import Bill from '../component/checkout/Bill'
 import {getData,storeData} from '../helper/helper'
 import {showToast,Loader} from '../helper/component/Indcator'
-
+import GradientButton from '../helper/component/GradientButton';
 
 
 export default function Checkout({navigation}) {
@@ -99,9 +99,11 @@ export default function Checkout({navigation}) {
   }
 
   return (
+    <View style={{flex:1}}>
+    <Text style={styles.login}>Checkout </Text>
     <View style={styles.container}>
        <Loader loading={loading} />
-              
+
       {
         items.length>0 
         ?
@@ -120,7 +122,12 @@ export default function Checkout({navigation}) {
         :
         <Text style={{fontSize:20,marginTop:50}}>Your Cart is Empty</Text>
       }
-       
+       <GradientButton>
+           <TouchableOpacity onPress={() => {  navigation.navigate("Home") }} style={[styles.backHome]} >
+              <Text style={styles.text}> Back To Home </Text>
+           </TouchableOpacity>
+       </GradientButton>
+    </View>
     </View>
   );
 }
@@ -149,5 +156,19 @@ const styles = StyleSheet.create({
    fontSize:20,
    fontWeight:'bold',
    fontStyle:"italic"
-  }
+  },
+  login:{
+    fontSize:30,
+    backgroundColor:'white',
+    paddingLeft:15
+    
+  },
+  backHome:{
+    height:50,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    borderRadius:10
+  },
 });
