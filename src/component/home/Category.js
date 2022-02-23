@@ -69,16 +69,17 @@ const styles = StyleSheet.create({
     backgroundColor:'orange',
   },
   category:{
-    color:'orange',
-    fontWeight:"bold",
+    color:'black',
     fontSize:20, 
-    margin:5
+    margin:5,
+    marginTop:20
+ 
   },
   image:{
     margin: 15,
     padding: 30,
-    width: 160,
-    height: 160,
+    width: 140,
+    height: 100,
     borderRadius: 30
   },
   btn:{

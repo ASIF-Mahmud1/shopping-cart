@@ -11,23 +11,13 @@ export default function Item({details, handleAddToCart,children}) {
   
   return (
     <View style={[styles.container,]}>
-      {
-        added ? <TouchableOpacity style={[styles.btn,]}  onPress={pressOnCart}>
-          <Text style={styles.text} >Remove From Cart</Text>
-            <Image source={{ uri: trash }} style={styles.trashImg} />
 
-        </TouchableOpacity  >
-          : <TouchableOpacity style={[styles.btn , styles.cart]}  onPress={pressOnCart}>
-            <Text style={styles.text}>Add to Cart</Text>
-            <Image source={{ uri: shoppingCart }} style={styles.cartImg} />
-
-          </TouchableOpacity>
-      }
-
+      <TouchableOpacity  onPress={pressOnCart}>
         <Image source={{ uri: imageUrl }} style={styles.itemImg} />
         <Text>Category {category}</Text>
         <Text>Name: {name}</Text>
         <Text>Price: {price}</Text>
+       </TouchableOpacity>
           {children}
     </View>
   );

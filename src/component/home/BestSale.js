@@ -27,8 +27,7 @@ const styles = StyleSheet.create({
  
   },
   text:{
-    color:'orange', 
-    fontWeight:"bold",
+    color:'black', 
     fontSize:20,
     margin:5
   }

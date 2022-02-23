@@ -7,7 +7,7 @@ import BestSale from '../component/home/BestSale'
 import {itemList} from '../../assets/data/items'
 import {storeData,getData} from '../helper/helper'
 import { useIsFocused } from '@react-navigation/native';
-
+import { showToast } from '../helper/component/Indcator';
 
 export default function Home({navigation}) {
 
@@ -28,6 +28,7 @@ export default function Home({navigation}) {
         }
      
       }
+      
       setItem(result)
 
     })
@@ -40,7 +41,7 @@ export default function Home({navigation}) {
       {
          return {
            ...ele,
-           added: !ele.added
+           added: true
          }
       }
       else
@@ -52,7 +53,7 @@ export default function Home({navigation}) {
        
     const forCart= result.filter((ele)=>ele.added===true)
     storeData("cartList", forCart)
- 
+    showToast("Added to Cart")
     setItem(result)
  
    }
