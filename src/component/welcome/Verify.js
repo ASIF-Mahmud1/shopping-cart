@@ -2,12 +2,21 @@ import React,{useState} from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar, TextInput} from 'react-native';
 import GradientButton from '../../helper/component/GradientButton';
+import { showToast } from '../../helper/component/Indcator';
 
 export default function Login({navigation}) {
   const [input, setInput]= useState('')
   
   const handleNavigation=()=>{
-    navigation.navigate('Home')
+    if(input==="")
+    {
+      showToast("Please Enter OTP")
+    }
+    else 
+    { 
+      navigation.navigate('Home')
+    }
+  
   }
   return (
     <View style={styles.container}>
