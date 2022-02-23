@@ -24,11 +24,6 @@ export default function Authorised(){
     SplashScreen.hide();
   }, [])
 
-  const RightButton = ({navigation}) => {
-    return <TouchableOpacity style={styles.rightBtn} onPress={() => navigation.navigate("MyBills")}>
-      <Text style={styles.rightBtnText} >My Bills</Text>
-    </TouchableOpacity>
-  }
 
     return(
       <NavigationContainer>
@@ -36,7 +31,7 @@ export default function Authorised(){
               <Stack.Screen name='Welcome' component={Welcome}  options={{headerShown:false}} />
               <Stack.Screen name='Login' component={Login}   />
               <Stack.Screen name='Verify' component={Verify} />
-              <Stack.Screen name='Home' component={Home} />
+              <Stack.Screen name='Home' component={Home} options={{headerShown:false}}  />
               <Stack.Screen name='Checkout' component={Checkout} /> 
               <Stack.Screen name='SingleCategory' component={SingleCategory} /> 
               <Stack.Screen name='MyBills' component={MyBills}  options={() => ({headerRight: null})} /> 

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,Image} from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
+import GradientButton from '../helper/component/GradientButton';
 export default function Welcome({navigation}) {
   const handleNavigation=()=>{
     navigation.navigate('Login')
@@ -11,9 +12,11 @@ export default function Welcome({navigation}) {
       <Text style={styles.info}>Welcome To Bolt</Text>
      
       <Image source={require("../../assets/image/intro.png")} style={styles.image} />
-      <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
-         <Text style={styles.text}> Login With Phone </Text>
-         </TouchableOpacity>
+          <GradientButton>
+                <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
+                    <Text style={styles.text}> Login With Phone </Text>
+                 </TouchableOpacity>
+          </GradientButton>
          <Text  style={styles.info}>Shop With Us</Text>
     </View>
   );
@@ -38,11 +41,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#301934',
+   // backgroundColor:'#301934',
     width: 300,
-    marginTop:50,
+  //  marginTop:50,
     color:'red',
-    borderRadius:10
+   // borderRadius:10
   },
   text :
   {
@@ -54,5 +57,8 @@ const styles = StyleSheet.create({
   info:{
     fontSize:18,
     fontWeight:'bold',
+  },
+  linearGradient:{
+    borderRadius:6
   }
 });
