@@ -3,6 +3,9 @@ package com.shopping_cart;
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; // required for onCreate parameter
 import org.devio.rn.splashscreen.SplashScreen; // required for react-native-splash-screen >= 0.3.1
+import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
+
+
 public class MainActivity extends ReactActivity {
 
   /**
