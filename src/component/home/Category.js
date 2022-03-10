@@ -3,6 +3,7 @@ import React,{Fragment} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar,ScrollView,Image} from 'react-native';
 import {getListOfCategory} from '../../helper/helper'
 import {ItemCategory}from '../../../assets/data/items'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Category({items, handleNavigation}) {
  
@@ -13,6 +14,7 @@ const catagoryList= Object.keys(result)
 
   return (
     <Fragment>
+      <Icon name="segment" style={{ color: 'black' }} size={25} />
       <Text style={styles.category}>Categories</Text>
       <ScrollView horizontal={true} style={styles.container}>
         {

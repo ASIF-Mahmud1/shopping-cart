@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { StyleSheet, Text, View, TouchableOpacity ,Image} from 'react-native';
-import{trash,shoppingCart} from "../../../assets/data/items"
 export default function Item({details, handleAddToCart,children}) {
   const {imageUrl, category, name, price,added ,id} =details
  
@@ -14,10 +12,9 @@ export default function Item({details, handleAddToCart,children}) {
 
       <TouchableOpacity  onPress={pressOnCart}>
         <Image source={{ uri: imageUrl }} style={styles.itemImg} />
-        <Text>Category {category}</Text>
-        <Text>Name: {name}</Text>
-        <Text>Price: {price}</Text>
-       </TouchableOpacity>
+        <Text style={styles.text}>${price}.00</Text>
+        <Text style={styles.text}>{category}</Text>
+      </TouchableOpacity>
           {children}
     </View>
   );
@@ -47,9 +44,9 @@ const styles = StyleSheet.create({
   },
   text :
   {
-    color:'white',
+    color:'black',
    fontSize:15,
-   fontWeight:'bold',
+   fontWeight:'500',
    fontStyle:"italic",
    marginRight:5
   },
@@ -68,7 +65,7 @@ const styles = StyleSheet.create({
   },
 
   itemImg:{
-    width: 300, 
+    width: 200, 
     height: 250 ,
     borderRadius:10
   },
