@@ -17,18 +17,18 @@ const catagoryList= Object.keys(result)
   return (
     <Fragment>
       <Icon name="segment" style={{ color: 'black' }} size={25} />
-      <Text style={styles.category}>Categories</Text>
+      <Text style={styles.category}>   Categories</Text>
       <ScrollView horizontal={true} style={styles.container}>
         {
           catagoryList.map((item) => {
             return (
 
               <TouchableOpacity onPress={() => handleNavigation(item, result[item])} style={styles.btn} >
-                <ImageBackground source={{ uri: ItemCategory[item] }} resizeMode="cover" style={styles.image} >
+                <ImageBackground source={{ uri: ItemCategory[item] }} resizeMode="cover" style={styles.image} imageStyle={{ borderRadius: 30}} >
 
-                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#8466EA', '#64B6FF']} style={{  borderRadius: 30,}}>
+                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={styles.categoryGradient[item.toString()]} style={{  borderRadius: 30,}}>
                     <View style={{
-                      width: 140,
+                      width: 180,
                       height: 100,
                      justifyContent:'center',
                    
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   category:{
     color:'black',
-    fontSize:20, 
+    fontSize:22, 
     margin:5,
     marginTop:20
  
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   image:{
     margin: 15,
    // padding: 30,
-    width: 140,
+    width: 180,
     height: 100,
     borderRadius: 30,
     opacity:0.7,
@@ -104,9 +104,7 @@ const styles = StyleSheet.create({
 
   },
   btn:{
-    paddingBottom:10,
-   // alignItems: 'center',
-    borderRadius: 30,
+     paddingBottom:10,
     
   },
   imageText:{
@@ -115,6 +113,11 @@ const styles = StyleSheet.create({
     fontSize:20,
     fontWeight:'bold',
     fontStyle:"italic"
-  }
+  },
+  categoryGradient:{
+   Women: ['#8466EA', '#64B6FF'],
+   Men: ['#FF5858','#FB5895'],
+   Kids:['#43E9B0','#38F9D7']
+  },
 
 });

@@ -8,7 +8,7 @@ export default function BestSale({items,handleAddToCart}) {
   
   return (
     <View style={styles.container}>
-        <Text style={styles.text}>Best Sale</Text>
+        <Text style={styles.text}>   Best Sell</Text>
 
       <ScrollView horizontal={true} style={{ margin: 2 }}>
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   text:{
     color:'black', 
-    fontSize:20,
+    fontSize:22,
     margin:5
   }
 });
