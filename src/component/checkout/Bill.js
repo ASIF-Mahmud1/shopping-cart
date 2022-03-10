@@ -12,14 +12,14 @@ export default function Bill({items}) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.bill}>Your Bill</Text>
+    
       <View style={styles.box}>
         <Text style={styles.leftText}>SubTotal :{" "} </Text>
         <Text style={styles.rightText}>{subTotal}{" BDT"}</Text>
       </View>
       <View style={styles.box}>
       <Text style={styles.leftText}>Discount: </Text>
-      <Text style={styles.rightText}>  {discount} % </Text>
+      <Text style={[styles.rightText]}>  {discount} % </Text>
       </View>
 
       <View style={styles.box}>
@@ -27,8 +27,8 @@ export default function Bill({items}) {
       <Text style={styles.rightText}>  {shipping}{" BDT"} </Text>
       </View>
     
-      <View style={styles.box}>
-           <Text  style={styles.leftText}>Total  :{"      "}</Text>
+      <View style={[styles.box,{marginTop:15}]}>
+           <Text  style={styles.leftTotal}>Total  :{"      "}</Text>
            <Text style={styles.rightText}> {total} {" BDT"} </Text>
       </View>
     </View>
@@ -43,13 +43,25 @@ const styles = StyleSheet.create({
     fontWeight:"bold"
   },
   box: {
-    display:'flex',flexDirection:'row'
+    display:'flex',flexDirection:'row',
   },
   leftText:{
-    marginRight:40
+    marginRight:40,
+    fontSize:16,
+    marginVertical:2.5, //919191
+    color:'#919191',
+  },
+  leftTotal:{
+    marginRight:40,
+    fontSize:16,
+    marginVertical:2.5, //919191
+    color:'#585B5E',
   },
   rightText:{
-    marginLeft:40
+    marginLeft:40,
+    fontSize:16,
+    color:'#434343',
+    marginVertical:2.5
   }
 
 });

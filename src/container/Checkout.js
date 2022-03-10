@@ -29,12 +29,12 @@ export default function Checkout({navigation}) {
         }
       })
       ////////////////////////////////////////// navigate to Home after 20 sec 
-        const myTimer = setTimeout(() => {
-          navigation.navigate("Home")
-          showToast("You have waited more than 20 seconds in Checkout page")
-        }, 1000*20);
-        setTimer(myTimer)
-        return () => clearTimeout(myTimer);
+        // const myTimer = setTimeout(() => {
+        //   navigation.navigate("Home")
+        //   showToast("You have waited more than 20 seconds in Checkout page")
+        // }, 1000*20);
+        // setTimer(myTimer)
+        // return () => clearTimeout(myTimer);
      //////////////////////////////////////////
     }, [])
   );
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#301934',
+    backgroundColor:'crimson',
     width: 300,
     marginBottom:20,
     color:'red',

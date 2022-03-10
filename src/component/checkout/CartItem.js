@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,Image} from 'react-native';
-import{trash,shoppingCart} from "../../../assets/data/items"
+import Icon from 'react-native-vector-icons/Octicons';
+
 export default function Item({details, handleAddToCart,children}) {
   const {imageUrl, category, name, price,added ,id} =details
  
@@ -16,13 +17,13 @@ export default function Item({details, handleAddToCart,children}) {
           <Image source={{ uri: imageUrl }} style={styles.itemImg} />
        </TouchableOpacity>
        <View style={{marginLeft:10}}>
-       <Text>Category {category}</Text>
-        <Text style={{width:150}}>Name: {name}</Text>
-        <Text>Price: {price}</Text>
+       <Text style={{fontSize:16,color:'black'}}>{category}</Text>
+        <Text style={{width:150,fontSize:14,color:'grey',marginBottom:5}}>{name}</Text>
+        <Text style={{fontSize:16,color:'blue'}} >${price}.00</Text>
         {children}
        </View>
        <TouchableOpacity style={styles.crossBtn} onPress={pressOnCart} >
-         <Text style={styles.cross}>X</Text>
+         <Icon name="x" style={{ color: 'grey' }} size={25} />
        </TouchableOpacity>
 
         
@@ -77,13 +78,12 @@ const styles = StyleSheet.create({
   },
 
   itemImg:{
-    width: 150, 
+    width: 130, 
     height: 150 ,
-    borderRadius:10
   },
   cross :
   {
-    marginLeft:0,
+   marginLeft:0,
    color:'grey',
    fontSize:22,
    fontWeight:"bold",

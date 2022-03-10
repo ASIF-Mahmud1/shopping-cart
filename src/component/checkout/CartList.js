@@ -32,20 +32,25 @@ export default function CartList({cartList,handleRemoveFromCart,handleQuantity})
 
 const styles = StyleSheet.create({
   container: {
- 
+    
   },
 
   text :
   {
    color:'black',
-   fontSize:35,
-   fontWeight:'bold',
-   fontStyle:"italic"
+   fontSize:32,
+   paddingHorizontal:10
+  // fontWeight:'bold',
+  // fontStyle:"italic"
   },
   card:{
     display:'flex',
     flexDirection:'row',  
     alignItems: 'center',
+    justifyContent:'space-around',
     marginLeft:0,
+    backgroundColor:'#F6F6F6',
+    marginTop:20
+    
   }
 });

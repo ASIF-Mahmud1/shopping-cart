@@ -6,9 +6,8 @@ export default function UserDetails({details}) {
    const {name, address}=details
   return (
     <View style={styles.container}>
-      <Text style={styles.text} >Customer Details </Text>
-       <Text style={styles.text}>Name: {name}</Text>
-       <Text style={styles.text}>Address: {address}</Text>
+      <Text style={styles.text} >Shewrapara, Mirpur, Dhaka-1216 House </Text>
+      <Text style={styles.text}>no: 938 Road no: 9</Text>
     </View>
   );
 }
@@ -18,7 +17,7 @@ const styles = StyleSheet.create({
     paddingVertical:5,
   },
   text:{
-    fontSize:14,
-    fontWeight:'500'
+    fontSize:18,
+    fontWeight:'bold'
   }
 });
