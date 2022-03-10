@@ -37,8 +37,10 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     marginBottom:25,
     marginHorizontal:15,
+    borderColor:'grey',
+  
     elevation: 1,
-    shadowColor: 'grey',
+    shadowColor: 'black',
     padding:10
 
   },
