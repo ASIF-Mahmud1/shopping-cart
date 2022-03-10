@@ -36,12 +36,14 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'row',
     marginBottom:25,
-    borderRadius:10,
-    marginHorizontal:15
+    marginHorizontal:15,
+    elevation: 1,
+    shadowColor: 'grey',
+    padding:10
+
   },
   cart: {
     backgroundColor:'#50C878',
-    //opacity:0.8
 
   },
   btn:{

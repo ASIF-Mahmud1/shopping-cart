@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyleSheet, Text, View, TouchableOpacity ,StatusBar} from 'react-native';
-
+import { Divider } from '../../helper/component/Divider';
 export default function Bill({items}) {
   const subTotal= items.reduce((acc,current)=>{
     return acc+ current.price* current.qty
@@ -12,28 +12,29 @@ export default function Bill({items}) {
 
   return (
     <View style={styles.container}>
-    
+      <Divider></Divider>
       <View style={styles.box}>
         <Text style={styles.leftText}>SubTotal :{" "} </Text>
-        <Text style={styles.rightText}>{subTotal}{" BDT"}</Text>
+        <Text style={styles.rightText}>{"$"}{subTotal.toFixed(2)}</Text>
       </View>
       <View style={styles.box}>
       <Text style={styles.leftText}>Discount: </Text>
-      <Text style={[styles.rightText]}>  {discount} % </Text>
+      <Text style={[styles.rightText]}>  {discount} %</Text>
       </View>
 
       <View style={styles.box}>
       <Text  style={styles.leftText}>Shipping :</Text>
-      <Text style={styles.rightText}>  {shipping}{" BDT"} </Text>
+      <Text style={styles.rightText}>  {"$"}{shipping.toFixed(2)}</Text>
       </View>
-    
+     <Divider/>
       <View style={[styles.box,{marginTop:15}]}>
-           <Text  style={styles.leftTotal}>Total  :{"      "}</Text>
-           <Text style={styles.rightText}> {total} {" BDT"} </Text>
+           <Text  style={styles.leftTotal}>Total  :</Text>
+           <Text style={styles.rightText}> {"$"}{total.toFixed(2)}</Text>
       </View>
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
   },
   box: {
     display:'flex',flexDirection:'row',
+    justifyContent:'space-between'
   },
   leftText:{
     marginRight:40,
