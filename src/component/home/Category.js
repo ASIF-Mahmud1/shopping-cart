@@ -16,7 +16,7 @@ const catagoryList= Object.keys(result)
 
   return (
     <Fragment>
-      <Icon name="format-align-left" style={{ color: 'black',paddingBottom:10 }} size={25} />
+    
       <Text style={styles.category}>  Categories</Text>
       <ScrollView horizontal={true} style={styles.container} showsHorizontalScrollIndicator={false} >
         {

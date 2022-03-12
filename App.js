@@ -11,6 +11,7 @@ import Welcome from './src/container/Welcome'
 import Login from './src/component/welcome/Login';
 import Verify from './src/component/welcome/Verify';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -24,6 +25,9 @@ export default function Authorised(){
     SplashScreen.hide();
   }, [])
 
+  const LeftButton = ({navigation}) => {
+    return  <Icon name="format-align-left" style={{ color: 'black',paddingTop:10 }} size={25} />
+  }
 
     return(
       <NavigationContainer>
@@ -31,7 +35,7 @@ export default function Authorised(){
               <Stack.Screen name='Welcome' component={Welcome}  options={{headerShown:false}} />
               <Stack.Screen name='Login' component={Login}   />
               <Stack.Screen name='Verify' component={Verify} />
-              <Stack.Screen name='Home' component={Home} options={{headerShown:false}}  />
+              <Stack.Screen name='Home' component={Home} options={() => (  {headerLeft:() =>  <LeftButton/>}  )   }  />
               <Stack.Screen name='Checkout' component={Checkout} /> 
               <Stack.Screen name='SingleCategory' component={SingleCategory} /> 
               <Stack.Screen name='MyBills' component={MyBills}  options={() => ({headerRight: null})} /> 
