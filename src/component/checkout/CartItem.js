@@ -19,7 +19,7 @@ export default function Item({ details, handleAddToCart, children }) {
           <Image source={{ uri: imageUrl }} style={styles.itemImg} />
         </TouchableOpacity>
         <View style={{ marginLeft: 10 }}>
-          <Text style={{ fontSize: 16, color: 'black' }}>{category}</Text>
+          <Text style={{ fontSize: 16, color: 'black' }}>{category} T-Shirt</Text>
           <Text style={{ width: 150, fontSize: 14, color: 'grey', marginBottom: 2 }}>{truncate(name,20)}</Text>
           <Text style={{ fontSize: 16, color: '#374ABE' }} >${price}.00</Text>
           {children}
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop:1,
+    marginTop:8,
     marginBottom: 25,
     marginHorizontal: 2,
     backgroundColor: 'white',

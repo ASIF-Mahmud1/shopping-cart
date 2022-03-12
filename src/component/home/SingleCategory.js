@@ -62,7 +62,7 @@ export default function SingleCategory({route, navigation }) {
   return (
     <View style={styles.container}>
         <Text style={[styles.text,{color:'grey'}]}> {category}'s Collection</Text>
-        <ScrollView style={{ margin: 20 }}>
+        <ScrollView style={{ margin: 20 }} showsVerticalScrollIndicator={false}  >
 
         {
           items.map((item) => {

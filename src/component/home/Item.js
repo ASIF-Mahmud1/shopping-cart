@@ -13,7 +13,7 @@ export default function Item({details, handleAddToCart,children}) {
       <TouchableOpacity  onPress={pressOnCart}>
         <Image source={{ uri: imageUrl }} style={styles.itemImg} />
         <Text style={styles.text}>${price}.00</Text>
-        <Text style={styles.text}>{category}</Text>
+        <Text style={styles.text}>{category} T-Shirt</Text>
       </TouchableOpacity>
           {children}
     </View>
