@@ -12,7 +12,7 @@
 
 3\. If a user waits for more than 20 seconds in the *Checkout* screen, it redirects to the *Home.*
 <br>
-## [Demo Video Link](https://drive.google.com/file/d/1FS1FK2cbE1JHTzKe4uw-YDyg5qZ_QSbI/view?usp=sharing)
+## [Demo Video Link](https://drive.google.com/file/d/1HDwr6uB6FKM--9HaRuyyM6u8Jd-YOGPD/view?usp=sharing)
 
 A video recording of the application can be seen, by clicking on the link above.
 <br>
