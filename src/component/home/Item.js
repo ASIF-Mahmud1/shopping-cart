@@ -44,11 +44,11 @@ const styles = StyleSheet.create({
   },
   text :
   {
-    color:'black',
-   fontSize:15,
-   fontWeight:'500',
-   fontStyle:"italic",
-   marginRight:5
+   color:'black',
+   fontSize:14,
+   fontFamily:'Roboto',
+   marginRight:5,
+   marginTop:4
   },
   trashImg:{
     marginRight:0,
@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
   },
 
   itemImg:{
-    width: 200, 
-    height: 250 ,
-    borderRadius:10
+    width: 150, 
+    height: 180 ,
+    borderRadius:5
   },
 });

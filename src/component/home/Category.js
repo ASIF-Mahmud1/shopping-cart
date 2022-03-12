@@ -85,10 +85,9 @@ const styles = StyleSheet.create({
     backgroundColor:'orange',
   },
   category:{
-    color:'black',
-    fontSize:22, 
-    margin:5,
-    marginTop:20
+   color:'#434343', 
+    fontSize:22,
+    marginBottom:10
  
   },
   image:{

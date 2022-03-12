@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
  
   },
   text:{
-    color:'black', 
+    color:'#434343', 
     fontSize:22,
-    margin:5
+    marginBottom:10
   }
 });
