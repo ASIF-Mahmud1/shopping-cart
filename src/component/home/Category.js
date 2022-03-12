@@ -24,12 +24,12 @@ const catagoryList= Object.keys(result)
             return (
 
               <TouchableOpacity onPress={() => handleNavigation(item, result[item])} style={styles.btn} >
-                <ImageBackground source={{ uri: ItemCategory[item] }} resizeMode="cover" style={styles.image} imageStyle={{ borderRadius: 30}} >
+                <ImageBackground source={{ uri: ItemCategory[item] }} resizeMode="cover" style={styles.image} imageStyle={{ borderRadius: 6}} >
 
-                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={styles.categoryGradient[item.toString()]} style={{  borderRadius: 30,}}>
+                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={styles.categoryGradient[item.toString()]} style={{  borderRadius: 6,}}>
                     <View style={{
-                      width: 180,
-                      height: 100,
+                      width: 114,
+                      height: 65,
                      justifyContent:'center',
                    
                     }}>
@@ -52,7 +52,8 @@ const catagoryList= Object.keys(result)
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-  
+    marginLeft:7
+
  
   },
   checkOut:{
@@ -91,11 +92,11 @@ const styles = StyleSheet.create({
  
   },
   image:{
-    margin: 15,
+    marginHorizontal: 10,
    // padding: 30,
-    width: 180,
-    height: 100,
-    borderRadius: 30,
+    width: 114,
+    height: 65,
+    borderRadius: 6,
     opacity:0.7,
     justifyContent:'center',
     alignItems:'center',
@@ -103,13 +104,15 @@ const styles = StyleSheet.create({
 
   },
   btn:{
-     paddingBottom:10,
+    marginLeft:0,
+    paddingTop:5,  
+    paddingBottom:20,
     
   },
   imageText:{
     textAlign:'center',
     color:'white',
-    fontSize:20,
+    fontSize:14,
     fontWeight:'bold',
     fontStyle:"italic"
   },
