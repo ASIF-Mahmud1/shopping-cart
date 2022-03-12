@@ -67,7 +67,7 @@ export default function Home({navigation}) {
  
   return (
     <View style={styles.container}>
-        <ScrollView style={{ margin: 10 }}>
+        <ScrollView style={{ margin: 10 }} showsVerticalScrollIndicator={false}>
           <Category items={items} handleNavigation={handleNavigationToCategory} />
           <Featured items={items}  handleAddToCart={handleAddToCart} />        
           <BestSale  items={items}  handleAddToCart={handleAddToCart} />

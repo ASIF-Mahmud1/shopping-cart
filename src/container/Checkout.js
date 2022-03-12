@@ -109,7 +109,7 @@ export default function Checkout({navigation}) {
         ?
           <Fragment>
 
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom:30}}>
               <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
               <UserDetails details={userDetails} />
               <Bill items={items.length > 0 ? items : []} />
