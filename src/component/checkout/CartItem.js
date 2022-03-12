@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
   },
   shadowProp: {
     shadowColor: 'black',
-    shadowOffset: { width: 0, height: 0 },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
-    shadowRadius: 3,
+    shadowRadius: 5,
 
   },
   cart: {
