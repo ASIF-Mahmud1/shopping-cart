@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
   shadowProp: {
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 1,
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
 
   },
   cart: {
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
   },
   crossBtn: {
-
+   paddingLeft:10
   }
 
 });
