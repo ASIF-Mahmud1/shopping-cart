@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
   },
   text :
   {
-    color:'white',
+   color:'white',
    fontSize:20,
    fontWeight:'bold',
-   fontStyle:"italic"
+  
   },
   label:{
     paddingTop:10,

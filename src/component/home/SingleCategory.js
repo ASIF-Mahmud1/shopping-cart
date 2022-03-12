@@ -5,6 +5,8 @@ import { useIsFocused } from '@react-navigation/native';
 import {storeData,getData} from '../../helper/helper'
 import Item from './Item'
 import GradientButton from '../../helper/component/GradientButton';
+import DropShadow from "react-native-drop-shadow";
+
 export default function SingleCategory({route, navigation }) {
   const { category, list :itemList } = route.params;
   const [items, setItem]=useState([]) 
@@ -59,14 +61,18 @@ export default function SingleCategory({route, navigation }) {
    
    const cartSize= items.filter((ele)=>ele.added===true).length
 
-  return (
-    <View style={styles.container}>
+  return ( <View style={styles.container}>
         <Text style={[styles.text,{color:'grey'}]}> {category}'s Collection</Text>
-        <ScrollView style={{ margin: 20 }} showsVerticalScrollIndicator={false}  >
+        <ScrollView style={{ margin: 20, paddingHorizontal:100 }} showsVerticalScrollIndicator={false}   >
 
         {
           items.map((item) => {
-            return   <Item details={item} handleAddToCart={handleAddToCart} />
+            return (   
+            
+              <DropShadow style={styles.shadowProp}>
+                 <Item details={item} handleAddToCart={handleAddToCart} />
+            </DropShadow>
+            )
           })
         }
         </ScrollView>
@@ -102,10 +108,17 @@ const styles = StyleSheet.create({
   },
   text :
   {
-    color:'white',
+   color:'white',
    fontSize:20,
    fontWeight:'bold',
-   fontStyle:"italic"
+  
+  },
+  shadowProp: {
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
+
   },
 
 });

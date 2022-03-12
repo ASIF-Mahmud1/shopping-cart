@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     color:'white',
    fontSize:20,
    fontWeight:'bold',
-   fontStyle:"italic"
+ 
   },
   label:{
     paddingTop:10,

@@ -22,9 +22,11 @@ export default function Item({details, handleAddToCart,children}) {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop:10,
     marginBottom:25,
     borderRadius:10,
-    marginHorizontal:8
+    marginHorizontal:8,
+    backgroundColor:'white'
   },
   cart: {
     backgroundColor:'#50C878',
