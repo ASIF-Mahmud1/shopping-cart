@@ -18,7 +18,7 @@ const catagoryList= Object.keys(result)
     <Fragment>
       <Icon name="segment" style={{ color: 'black' }} size={25} />
       <Text style={styles.category}>  Categories</Text>
-      <ScrollView horizontal={true} style={styles.container}>
+      <ScrollView horizontal={true} style={styles.container} showsHorizontalScrollIndicator={false} >
         {
           catagoryList.map((item) => {
             return (

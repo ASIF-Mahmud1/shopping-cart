@@ -9,7 +9,7 @@ export default function Featured({items,handleAddToCart}) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>  Featured</Text>
-      <ScrollView horizontal={true} style={{ margin: 2 }}>
+      <ScrollView horizontal={true} style={{ margin: 2 }} showsHorizontalScrollIndicator={false} >
 
         {
           featured.map((item) => {

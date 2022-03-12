@@ -109,7 +109,7 @@ export default function Checkout({navigation}) {
         ?
           <Fragment>
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
               <CartList cartList={items} handleRemoveFromCart={handleRemoveFromCart} handleQuantity={handleQuantity} />
               <UserDetails details={userDetails} />
               <Bill items={items.length > 0 ? items : []} />
@@ -128,7 +128,7 @@ export default function Checkout({navigation}) {
    
        <GradientButton >
            <TouchableOpacity onPress={() => {  navigation.navigate("Home") }} style={[styles.backHome]} >
-              <Text style={styles.text}> Back To Home </Text>
+              <Text style={styles.text}> Back to home </Text>
            </TouchableOpacity>
        </GradientButton>
     </View>
@@ -154,14 +154,14 @@ const styles = StyleSheet.create({
     width: 300,
     marginBottom:20,
     color:'red',
-    borderRadius:10
+    borderRadius:10,
   },
   text :
   {
     color:'white',
    fontSize:20,
    fontWeight:'bold',
-   fontStyle:"italic"
+  // fontStyle:"italic"
   },
   checkoutText:{
     fontSize:30,

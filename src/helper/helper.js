@@ -38,6 +38,13 @@ const getListOfCategory=(items)=>{
     return result
 }
 
+const truncate=(string, limit)=>{
+    if (string.length > limit) {
+    return string.substring(0, limit-1) + "...";
+    }
+    return string
+  }
+
 
 
 
@@ -45,5 +52,6 @@ export {
 
     getData, 
     storeData,
-    getListOfCategory
+    getListOfCategory,
+    truncate
 }

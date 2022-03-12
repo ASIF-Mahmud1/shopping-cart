@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Octicons';
 import DropShadow from "react-native-drop-shadow";
-
+import { truncate } from '../../helper/helper';
 export default function Item({ details, handleAddToCart, children }) {
   const { imageUrl, category, name, price, added, id } = details
 
@@ -20,12 +20,12 @@ export default function Item({ details, handleAddToCart, children }) {
         </TouchableOpacity>
         <View style={{ marginLeft: 10 }}>
           <Text style={{ fontSize: 16, color: 'black' }}>{category}</Text>
-          <Text style={{ width: 150, fontSize: 14, color: 'grey', marginBottom: 5 }}>{name}</Text>
-          <Text style={{ fontSize: 16, color: 'blue' }} >${price}.00</Text>
+          <Text style={{ width: 150, fontSize: 14, color: 'grey', marginBottom: 2 }}>{truncate(name,20)}</Text>
+          <Text style={{ fontSize: 16, color: '#374ABE' }} >${price}.00</Text>
           {children}
         </View>
         <TouchableOpacity style={styles.crossBtn} onPress={pressOnCart} >
-          <Icon name="x" style={{ color: 'grey' }} size={25} />
+          <Icon name="x" style={{ color: '#979797' }} size={25} />
         </TouchableOpacity>
 
       </View>
@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
+    marginTop:1,
     marginBottom: 25,
-    marginHorizontal: 15,
+    marginHorizontal: 2,
     backgroundColor: 'white',
     padding: 10,
 
@@ -88,8 +89,8 @@ const styles = StyleSheet.create({
   },
 
   itemImg: {
-    width: 130,
-    height: 150,
+    width: 109,
+    height: 115,
   },
   cross:
   {

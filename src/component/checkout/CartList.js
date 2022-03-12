@@ -14,7 +14,7 @@ export default function CartList({ cartList, handleRemoveFromCart, handleQuantit
               <TouchableOpacity disabled={item.qty === 1} onPress={() => { handleQuantity(item.id, -1) }}  >
                 <Text style={styles.text}> {'-  '}</Text>
               </TouchableOpacity>
-              <Text style={styles.text, { fontSize: 20 }}>{item.qty} </Text>
+              <Text style={styles.text, { fontSize: 16 }}>{item.qty} </Text>
               <TouchableOpacity onPress={() => { handleQuantity(item.id, 1) }}  >
                 <Text style={styles.text}> {'  +'}</Text>
               </TouchableOpacity>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   text:
   {
     color: 'black',
-    fontSize: 32,
+    fontSize: 16,
     paddingHorizontal: 10
   },
   card: {
@@ -48,7 +48,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginLeft: 0,
     backgroundColor: '#F6F6F6',
-    marginTop: 20
+    marginTop: 12,
+    width:114,
+    height:36
 
   },
 });

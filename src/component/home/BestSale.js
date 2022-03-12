@@ -10,7 +10,7 @@ export default function BestSale({items,handleAddToCart}) {
     <View style={styles.container}>
         <Text style={styles.text}>  Best Sell</Text>
 
-      <ScrollView horizontal={true} style={{ margin: 2 }}>
+      <ScrollView horizontal={true} style={{ margin: 2 }} showsHorizontalScrollIndicator={false}>
 
         {
           bestSale.map((item,index) => {
