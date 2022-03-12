@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
   },
   text:{
     fontSize:18,
-    fontWeight:'bold'
+    //fontWeight:'bold'
   }
 });

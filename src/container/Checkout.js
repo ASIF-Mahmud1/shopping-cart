@@ -100,7 +100,7 @@ export default function Checkout({navigation}) {
 
   return (
     <View style={{flex:1}}>
-    <Text style={styles.login}>Checkout </Text>
+    <Text style={styles.checkoutText}>Checkout </Text>
     <View style={styles.container}>
        <Loader loading={loading} />
 
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
    fontWeight:'bold',
    fontStyle:"italic"
   },
-  login:{
+  checkoutText:{
     fontSize:30,
     backgroundColor:'white',
     paddingLeft:15,
