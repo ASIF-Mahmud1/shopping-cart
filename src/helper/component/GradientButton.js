@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     linearGradient:{
         borderRadius:6,
         width:300,
-        marginHorizontal:20
+        marginHorizontal:20,
+        marginVertical:5
       }
 
 })

@@ -29,12 +29,12 @@ export default function Checkout({navigation}) {
         }
       })
       ////////////////////////////////////////// navigate to Home after 20 sec 
-        const myTimer = setTimeout(() => {
-          navigation.navigate("Home")
-          showToast("You have waited more than 20 seconds in Checkout page")
-        }, 1000*20);
-        setTimer(myTimer)
-        return () => clearTimeout(myTimer);
+        // const myTimer = setTimeout(() => {
+        //   navigation.navigate("Home")
+        //   showToast("You have waited more than 20 seconds in Checkout page")
+        // }, 1000*20);
+        // setTimer(myTimer)
+        // return () => clearTimeout(myTimer);
      //////////////////////////////////////////
     }, [])
   );
@@ -114,15 +114,19 @@ export default function Checkout({navigation}) {
               <UserDetails details={userDetails} />
               <Bill items={items.length > 0 ? items : []} />
             </ScrollView>
-            <TouchableOpacity onPress={() => { handleConfirm() }} style={styles.checkOut} >
+         
+            <GradientButton>
+            <TouchableOpacity onPress={() => { handleConfirm() }} style={[styles.backHome]} >
               <Text style={styles.text}> Confirm </Text>
             </TouchableOpacity>
-            
+            </GradientButton>
+          
         </Fragment>
         :
         <Text style={{fontSize:20,marginTop:50}}>Your Cart is Empty</Text>
       }
-       <GradientButton>
+   
+       <GradientButton >
            <TouchableOpacity onPress={() => {  navigation.navigate("Home") }} style={[styles.backHome]} >
               <Text style={styles.text}> Back To Home </Text>
            </TouchableOpacity>
@@ -146,7 +150,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'crimson',
+   // backgroundColor:'crimson',
     width: 300,
     marginBottom:20,
     color:'red',

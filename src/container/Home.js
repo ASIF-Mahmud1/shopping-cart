@@ -8,7 +8,7 @@ import {itemList} from '../../assets/data/items'
 import {storeData,getData} from '../helper/helper'
 import { useIsFocused } from '@react-navigation/native';
 import { showToast } from '../helper/component/Indcator';
-
+import GradientButton from '../helper/component/GradientButton';
 export default function Home({navigation}) {
 
   const [items, setItem]=useState([]) 
@@ -75,10 +75,11 @@ export default function Home({navigation}) {
        {
 
          cartSize >0 && 
-         <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
-         <Text style={styles.text}> Checkout </Text>
-         </TouchableOpacity>
-
+         <GradientButton>
+              <TouchableOpacity  onPress={handleNavigation} style={styles.checkOut} >
+              <Text style={styles.text}> Checkout </Text>
+              </TouchableOpacity>
+         </GradientButton>
        }
        
     </View>
@@ -93,15 +94,11 @@ const styles = StyleSheet.create({
     paddingTop:5
   },
   checkOut:{
-    height:50,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor:'crimson',
-    width: 300,
-    marginBottom:20,
-    color:'red',
-    borderRadius:10
+      height:50,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 300
   },
   text :
   {

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity ,ScrollView,Image} from 'react
 import { useIsFocused } from '@react-navigation/native';
 import {storeData,getData} from '../../helper/helper'
 import Item from './Item'
+import GradientButton from '../../helper/component/GradientButton';
 export default function SingleCategory({route, navigation }) {
   const { category, list :itemList } = route.params;
   const [items, setItem]=useState([]) 
@@ -72,10 +73,13 @@ export default function SingleCategory({route, navigation }) {
       {
 
         cartSize > 0 &&
-        <TouchableOpacity onPress={handleNavigation} style={styles.checkOut} >
+        <GradientButton>
+          <TouchableOpacity onPress={handleNavigation} style={styles.checkOut}>
           <Text style={styles.text}> Checkout </Text>
         </TouchableOpacity>
 
+        </GradientButton>
+       
       }
     </View>
   );
@@ -93,11 +97,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#301934',
     width: 300,
-    marginBottom:20,
-    color:'red',
-    borderRadius:10
+    borderRadius:10,
   },
   text :
   {
@@ -105,5 +106,6 @@ const styles = StyleSheet.create({
    fontSize:20,
    fontWeight:'bold',
    fontStyle:"italic"
-  }
+  },
+
 });
