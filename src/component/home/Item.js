@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   container: {
     marginBottom:25,
     borderRadius:10,
-    marginHorizontal:15
+    marginHorizontal:8
   },
   cart: {
     backgroundColor:'#50C878',

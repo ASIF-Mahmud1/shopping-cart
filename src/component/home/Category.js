@@ -5,7 +5,7 @@ import {getListOfCategory} from '../../helper/helper'
 import {ItemCategory}from '../../../assets/data/items'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
-import GradientButton from '../../helper/component/GradientButton';
+import DropShadow from "react-native-drop-shadow";
 
 export default function Category({items, handleNavigation}) {
  
@@ -17,12 +17,12 @@ const catagoryList= Object.keys(result)
   return (
     <Fragment>
       <Icon name="segment" style={{ color: 'black' }} size={25} />
-      <Text style={styles.category}>   Categories</Text>
+      <Text style={styles.category}>  Categories</Text>
       <ScrollView horizontal={true} style={styles.container}>
         {
           catagoryList.map((item) => {
             return (
-
+            <DropShadow style={styles.shadowProp}>
               <TouchableOpacity onPress={() => handleNavigation(item, result[item])} style={styles.btn} >
                 <ImageBackground source={{ uri: ItemCategory[item] }} resizeMode="cover" style={styles.image} imageStyle={{ borderRadius: 6}} >
 
@@ -39,7 +39,7 @@ const catagoryList= Object.keys(result)
                 </ImageBackground>
 
               </TouchableOpacity>
-
+              </DropShadow>
             )
           })
         }
@@ -52,9 +52,13 @@ const catagoryList= Object.keys(result)
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    marginLeft:7
-
- 
+    marginLeft:1
+  },
+  shadowProp: {
+    shadowColor: '#171717',
+    shadowOffset: {width: -5, height: 6},
+    shadowOpacity: 0.4,
+    shadowRadius: 5,
   },
   checkOut:{
     height:50,
@@ -100,13 +104,17 @@ const styles = StyleSheet.create({
     opacity:0.7,
     justifyContent:'center',
     alignItems:'center',
+    // shadowColor: 'black',
+    // elevation: 30,
+    // shadowOffset:{width:10,height:50}
+
  
 
   },
   btn:{
     marginLeft:0,
-    paddingTop:5,  
-    paddingBottom:20,
+    paddingVertical:5,  
+   
     
   },
   imageText:{

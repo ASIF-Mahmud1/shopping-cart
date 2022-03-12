@@ -8,7 +8,7 @@ export default function BestSale({items,handleAddToCart}) {
   
   return (
     <View style={styles.container}>
-        <Text style={styles.text}>   Best Sell</Text>
+        <Text style={styles.text}>  Best Sell</Text>
 
       <ScrollView horizontal={true} style={{ margin: 2 }}>
 
