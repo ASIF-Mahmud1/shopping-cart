@@ -7,6 +7,7 @@ import Bill from '../component/checkout/Bill'
 import {getData,storeData} from '../helper/helper'
 import {showToast,Loader} from '../helper/component/Indcator'
 import GradientButton from '../helper/component/GradientButton';
+import CountDown from 'react-native-countdown-component';
 
 
 export default function Checkout({navigation}) {
@@ -29,12 +30,12 @@ export default function Checkout({navigation}) {
         }
       })
       ////////////////////////////////////////// navigate to Home after 20 sec 
-        const myTimer = setTimeout(() => {
-          navigation.navigate("Home")
-          showToast("You have waited more than 20 seconds in Checkout page")
-        }, 1000*20);
-        setTimer(myTimer)
-        return () => clearTimeout(myTimer);
+        // const myTimer = setTimeout(() => {
+        //   navigation.navigate("Home")
+        //   showToast("You have waited more than 20 seconds in Checkout page")
+        // }, 1000*20);
+        // setTimer(myTimer)
+        // return () => clearTimeout(myTimer);
      //////////////////////////////////////////
     }, [])
   );
@@ -43,14 +44,14 @@ export default function Checkout({navigation}) {
   useEffect(()=>{
    if(loading===true)
    {
-     ////////////////////////////////////////// loading for 5 sec after Confirm 
+    ////////////////////////////////////////// loading for 5 sec after Confirm 
      const myTimer = setTimeout(() => {
       navigation.navigate("Home")
       showToast("Thank You for Shopping!")
     }, 1000*2);
     setTimer(myTimer)
     return () => clearTimeout(timer);
- //////////////////////////////////////////
+   //////////////////////////////////////////
    }
   },[loading])
 
@@ -101,6 +102,22 @@ export default function Checkout({navigation}) {
   return (
     <View style={{flex:1}}>
     <Text style={styles.checkoutText}>Checkout </Text>
+    <View style={{flexDirection:'row', backgroundColor:'white', alignItems:'baseline',paddingLeft:18}}>  
+    <Text style={{fontSize:18,color:'grey'}}>Time Left:</Text>
+    <CountDown
+       style={{marginTop:-8,marginBottom:-10,marginHorizontal:-4}}
+        until={20}
+        size={20}
+        onFinish={() =>{navigation.navigate("Home") ;showToast("You have waited more than 20 seconds in Checkout page") }  }
+        digitStyle={{backgroundColor: '#FFF'}}
+        digitTxtStyle={{color: '#1CC625'}}
+        timeToShow={['S']}
+        timeLabels={{ s: null}}
+       
+      />
+      <Text style={{fontSize:18,color:'grey',marginLeft:-10}}> sec </Text>
+    </View>
+   
     <View style={styles.container}>
        <Loader loading={loading} />
 
