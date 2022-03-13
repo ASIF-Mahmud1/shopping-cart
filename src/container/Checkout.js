@@ -19,7 +19,7 @@ export default function Checkout({navigation}) {
   const [items, setItem]=useState([]) 
   const [timer, setTimer]=useState(null) 
   const [loading, setLoading]=useState(false) 
-
+  const [digitColor,setDigitColor]= useState('#1CC625')
   useFocusEffect(
     React.useCallback(() => {
       getData("cartList",(value)=>{
@@ -98,24 +98,39 @@ export default function Checkout({navigation}) {
 
     setItem([...result])
   }
+  const handleCounterChange = (timeElapsed) => {
+
+    if (timeElapsed < 17 && timeElapsed >= 12) {
+      setDigitColor('orange')
+    }
+    else if (timeElapsed < 12) {
+      setDigitColor('red')
+    }
+  }
+  const onCountFinish=()=>{
+    navigation.navigate("Home") 
+    showToast("You have waited more than 20 seconds in Checkout page")
+   } 
+  
 
   return (
     <View style={{flex:1}}>
     <Text style={styles.checkoutText}>Checkout </Text>
     <View style={{flexDirection:'row', backgroundColor:'white', alignItems:'baseline',paddingLeft:18}}>  
-    <Text style={{fontSize:18,color:'grey'}}>Time Left:</Text>
+    <Text style={{fontSize:18,color:'grey'}}>Confirm By:</Text>
     <CountDown
-       style={{marginTop:-8,marginBottom:-10,marginHorizontal:-4}}
+       style={{marginTop:-8,marginBottom:0,marginHorizontal:-4}}
         until={20}
-        size={20}
-        onFinish={() =>{navigation.navigate("Home") ;showToast("You have waited more than 20 seconds in Checkout page") }  }
-        digitStyle={{backgroundColor: '#FFF'}}
-        digitTxtStyle={{color: '#1CC625'}}
+        size={22}
+        onFinish={onCountFinish}
+        digitStyle={{backgroundColor: 'white', borderRadius:100, padding:0,margin:0}}
+        digitTxtStyle={{color: digitColor}}
         timeToShow={['S']}
         timeLabels={{ s: null}}
+        onChange={handleCounterChange}
        
       />
-      <Text style={{fontSize:18,color:'grey',marginLeft:-10}}> sec </Text>
+      <Text style={{fontSize:18,color:'grey',marginLeft:-10}}> sec. </Text>
     </View>
    
     <View style={styles.container}>
